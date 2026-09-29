@@ -1,0 +1,36 @@
+# Unity Generated Folders
+Unity_VTVL_Simulator/[Ll]ibrary/
+Unity_VTVL_Simulator/[Tt]emp/
+Unity_VTVL_Simulator/[Oo]bj/
+Unity_VTVL_Simulator/[Bb]uild/
+Unity_VTVL_Simulator/[Bb]uilds/
+Unity_VTVL_Simulator/[Ll]ogs/
+Unity_VTVL_Simulator/[Uu]ser[Ss]ettings/
+Unity_VTVL_Simulator/[Mm]emoryCaptures/
+Unity_VTVL_Simulator/AssetStoreTools*
+
+# Visual Studio / Rider / VSCode
+.vs/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
