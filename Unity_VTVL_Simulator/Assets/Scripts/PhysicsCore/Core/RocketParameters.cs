@@ -36,8 +36,8 @@ namespace DSTU.VTVL.PhysicsCore
         /// <summary>Внешний диаметр цилиндрической части корпуса (м)</summary>
         public const double Diameter = 1.80;
 
-        /// <summary>Площадь поперечного сечения (мидель) S = pi * r² (м²)</summary>
-        public static readonly double CrossSectionArea = Math.PI * (Diameter / 2.0) * (Diameter / 2.0); // ~2.5447 м²
+        /// <summary>Площадь поперечного сечения (мидель) КР-3 (м²)</summary>
+        public const double CrossSectionArea = 2.55;
 
         /// <summary>Эффективная площадь торможения при спуске кормой вперед с решётчатыми рулями (м²)</summary>
         public const double BroadsideReentryArea = 16.0;
@@ -58,7 +58,7 @@ namespace DSTU.VTVL.PhysicsCore
         public const double SpecificImpulse = 300.0;
 
         /// <summary>Секундный массовый расход топлива при 100% тяге q_m = T / (Isp * g0) (кг/с)</summary>
-        public static readonly double MassFlowRateMax = ThrustMax / (SpecificImpulse * G0); // ~152.96 кг/с
+        public static readonly double MassFlowRateMax = ThrustMax / (SpecificImpulse * G0); // ~152.957432 кг/с
 
         // -------------------------------------------------------------
         // Навигационные координаты миссии (A -> C -> B)
@@ -69,11 +69,11 @@ namespace DSTU.VTVL.PhysicsCore
         /// <summary>Координата X целевой посадочной баржи ASDS Pad B (м)</summary>
         public const double PadB_X = 25270.0; // 25.27 км по дальности
 
-        /// <summary>Максимально допустимая вертикальная скорость при касании опорами (м/с)</summary>
+        /// <summary>Максимально допустимая вертикальная скорость касания (м/с) по регламенту Normal</summary>
         public const double MaxTouchdownVy = 3.5;
 
-        /// <summary>Идеальная скорость мягкой посадки (м/с)</summary>
-        public const double TargetTouchdownVy = 1.5;
+        /// <summary>Идеальная скорость мягкой посадки (м/с) по регламенту Normal</summary>
+        public const double TargetTouchdownVy = 2.0;
 
         /// <summary>Максимально допустимая перегрузка конструкции ступени (G)</summary>
         public const double MaxStructuralGForce = 6.0;
@@ -130,20 +130,20 @@ namespace DSTU.VTVL.PhysicsCore
         /// <summary>Производная момента демпфирования тангажа m_z^(omega_z) < 0</summary>
         public const double AerodynamicDampingMzWz = -0.20;
 
-        /// <summary>Гарантированный посадочный резерв топлива (кг)</summary>
-        public const double MinLandingFuelReserve = 3000.0;
+        /// <summary>Гарантированный посадочный резерв топлива P_L (кг) по КР-3 v3</summary>
+        public const double MinLandingFuelReserve = 3500.0;
 
         // -------------------------------------------------------------
-        // Динамика зажигания и переходных процессов ДУ (КР-3, 27.09.2026)
+        // Динамика зажигания и переходных процессов ДУ (КР-3 v3, 29.09.2026)
         // -------------------------------------------------------------
-        /// <summary>Чистое время задержки зажигания до появления полезной тяги tau_d (с)</summary>
-        public const double EngineIgnitionDelay = 0.5;
+        /// <summary>Чистая задержка зажигания без полезной тяги tau_ign (с)</summary>
+        public const double EngineIgnitionDelay = 1.5;
 
-        /// <summary>Время линейного набора тяги от нуля до заданного дросселя tau_r (с)</summary>
+        /// <summary>Время линейного набора тяги от нуля до заданного уровня tau_r (с)</summary>
         public const double EngineRampUpTime = 1.0;
 
-        /// <summary>Полное время выхода двигателя на режим тяги tau_ign = tau_d + tau_r (с)</summary>
-        public const double EngineTotalIgnitionTime = EngineIgnitionDelay + EngineRampUpTime; // 1.5 с
+        /// <summary>Полное время выхода двигателя на режим тяги tau_tot = tau_ign + tau_r (с)</summary>
+        public const double EngineTotalIgnitionTime = EngineIgnitionDelay + EngineRampUpTime; // 2.5 с
 
         // -------------------------------------------------------------
         // Механические параметры посадочных опор (ИСС-4, Регламент 1.0)
