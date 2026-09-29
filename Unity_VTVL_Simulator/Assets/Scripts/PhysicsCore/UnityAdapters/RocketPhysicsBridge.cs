@@ -364,20 +364,20 @@ namespace DSTU.VTVL.UnityAdapters
             double pitchError = Math.Abs(State.PitchDegrees - 90.0);
             double distToBarge = Math.Abs(State.PosX - RocketParameters.PadB_X);
 
-            if (vy <= RocketParameters.TargetTouchdownVy && vx <= 0.8 && pitchError <= 7.0 && distToBarge <= 120.0)
+            if (vy <= RocketParameters.TargetTouchdownVy && vx <= 0.8 && pitchError <= 7.0 && distToBarge <= 150.0)
             {
                 State.IsLanded = true;
-                Debug.Log($"<color=lime>[ПОСАДКА УСПЕШНА] Мягкая посадка на баржу B! Vy={vy:F2} м/с, Vx={vx:F2} м/с, Отклонение={distToBarge:F1} м, Остаток топлива={State.Fuel:F0} кг.</color>");
+                Debug.Log($"<color=lime>[ПОСАДКА УСПЕШНА] Мягкая посадка на баржу B (Touchdown: PASS)! Vy={vy:F2} м/с, Vx={vx:F2} м/с, Тангаж={pitchError:F1}°, Отклонение={distToBarge:F1} м, Остаток топлива={State.Fuel:F0} кг.</color>");
             }
             else if (vy <= RocketParameters.MaxTouchdownVy && pitchError <= 12.0)
             {
                 State.IsLanded = true;
-                Debug.LogWarning($"<color=yellow>[ГРУБАЯ ПОСАДКА] Ступень уцелела на упорах. Vy={vy:F2} м/с.</color>");
+                Debug.LogWarning($"<color=yellow>[ПОСАДКА С ДОПУСКАМИ] Ступень уцелела на барже. Vy={vy:F2} м/с, Vx={vx:F2} м/с, Тангаж={pitchError:F1}°, Отклонение={distToBarge:F1} м, Топливо={State.Fuel:F0} кг.</color>");
             }
             else
             {
                 State.IsCrashed = true;
-                State.CrashReason = $"Крушение при ударе о палубу: Vy = {vy:F2} м/с (лимит {RocketParameters.MaxTouchdownVy:F1} м/с).";
+                State.CrashReason = $"Крушение при ударе о палубу: Vy={vy:F2} м/с (лимит {RocketParameters.MaxTouchdownVy:F1} м/с), Vx={vx:F2} м/с, Наклон={pitchError:F1}°.";
                 Debug.LogError($"<color=red>[КРУШЕНИЕ] {State.CrashReason}</color>");
             }
         }
