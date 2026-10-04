@@ -35,14 +35,25 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# Внутренние Markdown файлы и рабочие заметки команды (скрыты из репозитория)
-DGTY_SOFT/*.md
-PROJECT_OVERVIEW.md
-
-# Внутренние служебные файлы, скрипты и отчеты
-*сообщение*.txt
+# Документы, рабочие тетради, регламенты и служебные файлы команды
+*.docx
 *.pages
+*.pdf
+*.xlsx
+*.xls
+*Рабочая_тетрадь*
+*Регламент*
+*сообщение*
+*.txt
+!Unity_VTVL_Simulator/ProjectSettings/ProjectVersion.txt
+
+# Исходные материалы и внутренние заметки команды
+Source_Documents/
+DGTY_SOFT/
+
+# Служебные скрипты и локальные отчеты симулятора
 create_spec_docx.py
+PROJECT_OVERVIEW.md
 FlightReport*.*
 __pycache__/
 *.pyc
