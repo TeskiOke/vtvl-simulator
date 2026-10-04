@@ -40,7 +40,7 @@ namespace DSTU.VTVL.Guidance
         }
 
         /// <summary>
-        /// Вычисляет оптимальный уровень тяги двигателя для плавного касания со скоростью ~1.5 м/с.
+        /// Вычисляет оптимальный уровень тяги двигателя для мягкого касания со скоростью ~1.2 м/с.
         /// </summary>
         /// <param name="mass">Текущая масса ступени (кг)</param>
         /// <param name="altitude">Текущая высота над площадкой (м)</param>
@@ -49,9 +49,19 @@ namespace DSTU.VTVL.Guidance
         {
             double gh = GravityModel.GetGravity(altitude);
 
-            // Виртуальная точка остановки чуть ниже уровня опор (0.6 м) для мягкого касания 1.5-2 м/с
-            double virtY = Math.Max(0.2, altitude + 0.6);
-            double requiredDecel = (verticalVelocity * verticalVelocity) / (2.0 * virtY);
+            // Целевая вертикальная скорость при касании (1.2 м/с)
+            const double targetV = 1.2;
+            double absVy = Math.Abs(verticalVelocity);
+            
+            // Если скорость уже ниже целевой на малой высоте, удерживаем минимальное зависание
+            if (altitude < 3.0 && absVy <= targetV + 0.3)
+            {
+                double hoverThrust = mass * (gh - 0.3); // Мягкое опускание с -0.3 м/с²
+                return Math.Max(RocketParameters.ThrottleMin, Math.Min(1.0, hoverThrust / RocketParameters.ThrustMax));
+            }
+
+            double vSqDelta = Math.Max(0.0, (absVy * absVy) - (targetV * targetV));
+            double requiredDecel = vSqDelta / (2.0 * Math.Max(0.8, altitude));
 
             double requiredThrust = mass * (requiredDecel + gh);
             double throttle = requiredThrust / RocketParameters.ThrustMax;

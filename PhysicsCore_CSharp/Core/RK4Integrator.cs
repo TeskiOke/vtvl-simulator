@@ -76,6 +76,7 @@ namespace DSTU.VTVL.PhysicsCore
 
             // Телеметрия с шага k1
             s.GForce = k1.GForce;
+            s.KinematicAccel = k1.KinematicAccel;
             s.MachNumber = k1.Mach;
             s.DynamicPressure = k1.DynamicPressure;
             s.ThrustForce = k1.ThrustForce;

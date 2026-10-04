@@ -94,6 +94,9 @@ namespace DSTU.VTVL.PhysicsCore
         /// <summary>Текущая сила тяги двигателя (Н)</summary>
         public double ThrustForce;
 
+        /// <summary>Угол качания сопла двигателя TVC (градусы, [-7°..+7°])</summary>
+        public double GimbalAngleDegrees;
+
         /// <summary>Текущая сила аэродинамического сопротивления (Н)</summary>
         public double DragForce;
 

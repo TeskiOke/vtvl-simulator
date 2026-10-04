@@ -34,3 +34,20 @@ Unity_VTVL_Simulator/AssetStoreTools*
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Markdown документация проекта (скрыта из публичного репозитория)
+*.md
+**/*.md
+*.md.meta
+**/*.md.meta
+DGTY_SOFT/*.md
+
+# Внутренние служебные файлы, скрипты и отчеты
+*сообщение*.txt
+*.pages
+create_spec_docx.py
+FlightReport*.*
+__pycache__/
+*.pyc
+*.tmp
+*.log

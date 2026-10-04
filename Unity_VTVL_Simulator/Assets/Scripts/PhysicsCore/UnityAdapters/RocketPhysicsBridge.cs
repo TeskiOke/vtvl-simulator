@@ -51,6 +51,7 @@ namespace DSTU.VTVL.UnityAdapters
         private float _lastTrajectoryRecordTime = 0f;
 
         [Header("Визуальные эффекты (VFX)")]
+        public Transform EngineNozzle;
         public ParticleSystem MainEnginePlume;
         public ParticleSystem LandingSteamPlume;
         public ParticleSystem ReentryPlasmaGlow;
@@ -124,6 +125,22 @@ namespace DSTU.VTVL.UnityAdapters
                 if (Input.GetKeyDown(KeyCode.X)) ManualThrottle = 0.0f;
             }
 
+            // Динамический расчёт отклонения сопла маршевого двигателя (TVC Gimbal)
+            float targetGimbal = 0f;
+            if (!IsAutopilotEnabled)
+            {
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                    targetGimbal = (float)RocketParameters.TvcMaxGimbalAngleDeg;
+                else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                    targetGimbal = -(float)RocketParameters.TvcMaxGimbalAngleDeg;
+            }
+            else
+            {
+                float dPitchDeg = (float)(ManualPitchDegrees - State.PitchDegrees);
+                targetGimbal = Mathf.Clamp(dPitchDeg * 0.45f, -(float)RocketParameters.TvcMaxGimbalAngleDeg, (float)RocketParameters.TvcMaxGimbalAngleDeg);
+            }
+            State.GimbalAngleDegrees = Mathf.MoveTowards((float)State.GimbalAngleDegrees, targetGimbal, (float)RocketParameters.TvcMaxSlewRateDegPerSec * Time.unscaledDeltaTime);
+
             // Сброс сцены R
             if (Input.GetKeyDown(KeyCode.R)) ResetSimulation();
 
@@ -178,6 +195,10 @@ namespace DSTU.VTVL.UnityAdapters
             {
                 TrajectoryLine.positionCount = 0;
             }
+            if (TelemetryLogger.Instance != null)
+            {
+                TelemetryLogger.Instance.ResetLogger();
+            }
         }
 
         private void FixedUpdate()
@@ -192,64 +213,7 @@ namespace DSTU.VTVL.UnityAdapters
             for (int step = 0; step < TimeWarp; step++)
             {
                 if (State.IsLanded || State.IsCrashed) break;
-
-                double dt = SimulationFixedDt;
-
-                // 1. Управление (Автопилот или Ручное)
-                double throttleCmd;
-                double pitchCmdRad;
-                bool isReentry = (State.VelY < 0.0 && State.PosY < 70000.0);
-
-                if (IsAutopilotEnabled)
-                {
-                    var cmd = Autopilot.Update(State, dt);
-                    throttleCmd = cmd.Throttle;
-                    pitchCmdRad = State.Pitch;
-                    ManualThrottle = (float)cmd.Throttle;
-                    ManualPitchDegrees = (float)(cmd.PitchAngle * 180.0 / Math.PI);
-                }
-                else
-                {
-                    throttleCmd = ManualThrottle;
-                    pitchCmdRad = (ManualPitchDegrees * Math.PI) / 180.0;
-                    State.Pitch = pitchCmdRad;
-                    State.FlightPhase = "РУЧНОЕ УПРАВЛЕНИЕ";
-                }
-
-                // 2. Численное интегрирование ОДУ
-                if (Integrator == IntegratorType.RungeKutta4)
-                {
-                    RK4Integrator.Step(State, dt, throttleCmd, pitchCmdRad, isReentry);
-                }
-                else
-                {
-                    EulerIntegrator.Step(State, dt, throttleCmd, pitchCmdRad, isReentry);
-                }
-
-                // 3. Обработка касания поверхности (Земля y <= 0)
-                if (State.PosY <= 0.0)
-                {
-                    State.PosY = 0.0;
-                    if (!State.HasLiftoff)
-                    {
-                        State.VelY = 0.0;
-                        State.VelX = 0.0;
-                    }
-                    else
-                    {
-                        EvaluateTouchdown();
-                        break;
-                    }
-                }
-
-                // 4. Проверка разрушения перегрузкой
-                if (State.GForce > RocketParameters.MaxStructuralGForce && State.HasLiftoff)
-                {
-                    State.IsCrashed = true;
-                    State.CrashReason = $"Разрушение от перегрузки: {State.GForce:F1}G > {RocketParameters.MaxStructuralGForce:F1}G";
-                    _isSimulationActive = false;
-                    break;
-                }
+                StepSimulationPhysics(SimulationFixedDt);
             }
 
             // 5. Синхронизация визуального представления в Unity
@@ -261,6 +225,81 @@ namespace DSTU.VTVL.UnityAdapters
             {
                 _lastTrajectoryRecordTime = Time.time;
                 RecordTrajectoryPoint(transform.position);
+            }
+        }
+
+        /// <summary>
+        /// Выполняет один численный шаг физики и систем наведения.
+        /// </summary>
+        public void StepSimulationPhysics(double dt)
+        {
+            EnsureInitialized();
+            if (State.IsLanded || State.IsCrashed) return;
+
+            // 1. Управление (Автопилот или Ручное)
+            double throttleCmd;
+            double pitchCmdRad;
+            bool isReentry = (State.VelY < 0.0 && State.PosY < 70000.0);
+
+            if (IsAutopilotEnabled)
+            {
+                var cmd = Autopilot.Update(State, dt);
+                throttleCmd = cmd.Throttle;
+                pitchCmdRad = State.Pitch;
+                ManualThrottle = (float)cmd.Throttle;
+                ManualPitchDegrees = (float)(cmd.PitchAngle * 180.0 / Math.PI);
+            }
+            else
+            {
+                throttleCmd = ManualThrottle;
+                pitchCmdRad = (ManualPitchDegrees * Math.PI) / 180.0;
+                State.Pitch = pitchCmdRad;
+                State.FlightPhase = "РУЧНОЕ УПРАВЛЕНИЕ";
+            }
+
+            // Динамика сопла TVC (Gimbal)
+            float targetGimbal = 0f;
+            if (!IsAutopilotEnabled)
+            {
+                targetGimbal = Mathf.Clamp(90f - ManualPitchDegrees, -(float)RocketParameters.TvcMaxGimbalAngleDeg, (float)RocketParameters.TvcMaxGimbalAngleDeg);
+            }
+            else
+            {
+                targetGimbal = Mathf.Clamp((float)(-State.AngularVelPitch * 180.0 / Math.PI * 1.5), -(float)RocketParameters.TvcMaxGimbalAngleDeg, (float)RocketParameters.TvcMaxGimbalAngleDeg);
+            }
+            State.GimbalAngleDegrees = Mathf.MoveTowards((float)State.GimbalAngleDegrees, targetGimbal, (float)RocketParameters.TvcMaxSlewRateDegPerSec * (float)dt);
+
+            // 2. Численное интегрирование ОДУ
+            if (Integrator == IntegratorType.RungeKutta4)
+            {
+                RK4Integrator.Step(State, dt, throttleCmd, pitchCmdRad, isReentry);
+            }
+            else
+            {
+                EulerIntegrator.Step(State, dt, throttleCmd, pitchCmdRad, isReentry);
+            }
+
+            // 3. Обработка касания поверхности (Земля y <= 0)
+            if (State.PosY <= 0.0)
+            {
+                State.PosY = 0.0;
+                if (!State.HasLiftoff)
+                {
+                    State.VelY = 0.0;
+                    State.VelX = 0.0;
+                }
+                else
+                {
+                    EvaluateTouchdown();
+                }
+            }
+
+            // 4. Проверка разрушения перегрузкой
+            if (State.GForce > RocketParameters.MaxStructuralGForce && State.HasLiftoff)
+            {
+                State.IsCrashed = true;
+                State.CrashReason = $"Разрушение от перегрузки: {State.GForce:F1}G > {RocketParameters.MaxStructuralGForce:F1}G";
+                _isSimulationActive = false;
             }
         }
 
@@ -276,6 +315,12 @@ namespace DSTU.VTVL.UnityAdapters
 
         private void UpdateVisuals(double throttle, double pitchDeg, bool rcsActive, bool gridFinsActive)
         {
+            // 0. Качание сопла маршевого двигателя (TVC Gimbal)
+            if (EngineNozzle != null)
+            {
+                EngineNozzle.localRotation = Quaternion.Euler(180f, 0f, (float)State.GimbalAngleDegrees);
+            }
+
             // 1. Пламя основного двигателя
             if (MainEnginePlume != null)
             {

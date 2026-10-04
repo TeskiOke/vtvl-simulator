@@ -26,6 +26,7 @@ namespace DSTU.VTVL.PhysicsCore
         public double ThrustForce;
         public double DragForce;
         public double GForce;
+        public double KinematicAccel;
         public double Mach;
         public double DynamicPressure;
     }
@@ -105,6 +106,7 @@ namespace DSTU.VTVL.PhysicsCore
             d.dVelY = ay;
             d.dVelZ = az;
             d.GForce = feltG;
+            d.KinematicAccel = Math.Sqrt(ax * ax + ay * ay + az * az);
 
             // 7. Расход топлива dm/dt = - T / (Isp * g0)
             double dFuel = 0.0;

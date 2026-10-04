@@ -206,11 +206,11 @@ namespace DSTU.VTVL.EditorTools
             // =========================================================
             // 6. СИСТЕМЫ ЧАСТИЦ (VFX): ПЛАМЯ, ПАР ПОСАДКИ, ПЛАЗМА ВХОДА
             // =========================================================
-            // А. Пламя основного двигателя
+            // А. Пламя основного двигателя (прикреплено к соплу и поворачивается вместе с ним)
             GameObject plumeObj = new GameObject("VFX_MainEnginePlume");
-            plumeObj.transform.SetParent(rocketRoot.transform, false);
-            plumeObj.transform.localPosition = new Vector3(0f, -11.0f, 0f);
-            plumeObj.transform.localRotation = Quaternion.Euler(90f, 0f, 0f); // Струя вниз
+            plumeObj.transform.SetParent(nozzle.transform, false);
+            plumeObj.transform.localPosition = new Vector3(0f, 0f, 0f);
+            plumeObj.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f); // Струя по оси сопла
 
             ParticleSystem plumePs = plumeObj.AddComponent<ParticleSystem>();
             var pMain = plumePs.main;
@@ -282,8 +282,10 @@ namespace DSTU.VTVL.EditorTools
             // 8. НАВЕШИВАНИЕ ФИЗИКИ И СИСТЕМЫ СЛЕЖЕНИЯ
             // =========================================================
             RocketPhysicsBridge bridge = rocketRoot.AddComponent<RocketPhysicsBridge>();
-            rocketRoot.AddComponent<TelemetryLogger>();
+            TelemetryLogger logger = rocketRoot.AddComponent<TelemetryLogger>();
+            logger.PhysicsBridge = bridge;
 
+            bridge.EngineNozzle = nozzle.transform;
             bridge.MainEnginePlume = plumePs;
             bridge.LandingSteamPlume = steamPs;
             bridge.ReentryPlasmaGlow = plasmaPs;
@@ -317,16 +319,19 @@ namespace DSTU.VTVL.EditorTools
             };
 
             Debug.Log($"<color=lime>✅ 3D-сцена VTVL обновлена с круглой ракетой, паром и свободной камерой: {scenePath}</color>");
-            EditorUtility.DisplayDialog("VTVL Симулятор обновлен!", 
-                "3D-сцена суборбитального полёта успешно пересобрана!\n\n" +
-                "✨ Что улучшено:\n" +
-                "• Идеально круглая ракета (40 сегментов) с носовым конусом и соплом\n" +
-                "• Плавная камера с облётом 360° (зажми ПКМ и двигай мышь, колёсико — зум)\n" +
-                "• Клубы пара и дыма при посадке у палубы\n" +
-                "• Огненный плазменный след при входе в атмосферу\n" +
-                "• 3D-лента траектории полёта (вкл/выкл по кнопке 'T')\n" +
-                "• Сворачиваемый HUD и подсказки клавиш ручного управления!\n\n" +
-                "Нажмите PLAY (Cmd + P) для запуска!", "Полетели!");
+            if (!Application.isBatchMode)
+            {
+                EditorUtility.DisplayDialog("VTVL Симулятор обновлен!", 
+                    "3D-сцена суборбитального полёта успешно пересобрана!\n\n" +
+                    "✨ Что улучшено:\n" +
+                    "• Идеально круглая ракета (40 сегментов) с носовым конусом и поворотным соплом TVC\n" +
+                    "• Плавная камера с облётом 360° (зажми ПКМ и двигай мышь, колёсико — зум)\n" +
+                    "• Клубы пара и дыма при посадке у палубы\n" +
+                    "• Огненный плазменный след при входе в атмосферу\n" +
+                    "• 3D-лента траектории полёта (вкл/выкл по кнопке 'T')\n" +
+                    "• Графики траектории, высоты и посекундный отчёт (кнопка 'G')!\n\n" +
+                    "Нажмите PLAY (Cmd + P) для запуска!", "Полетели!");
+            }
         }
 
         /// <summary>
