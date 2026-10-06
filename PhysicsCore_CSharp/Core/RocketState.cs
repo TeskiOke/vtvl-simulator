@@ -186,6 +186,10 @@ namespace DSTU.VTVL.PhysicsCore
 
         /// <summary>Полная скорость центра масс |V| (м/с)</summary>
         public double TotalVelocity => Math.Sqrt(VelX * VelX + VelY * VelY + VelZ * VelZ);
+        public double TotalSpeed => TotalVelocity;
+
+        /// <summary>Угловая скорость по тангажу (рад/с)</summary>
+        public double AngularVelocity => AngularVelPitch;
 
         /// <summary>Угол тангажа в градусах [0..180]</summary>
         public double PitchDegrees => (Pitch * 180.0) / Math.PI;
