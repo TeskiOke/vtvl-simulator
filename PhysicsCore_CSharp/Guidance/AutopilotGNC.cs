@@ -5,6 +5,21 @@ namespace DSTU.VTVL.Guidance
     using DSTU.VTVL.PhysicsCore;
 
     /// <summary>
+    /// Фазы полета (строгий конечный автомат состояний).
+    /// Исключает ложные переходы назад при торможении у земли.
+    /// </summary>
+    public enum FlightStage
+    {
+        PadA_Prelaunch = 0,
+        Ascent_Vertical = 1,
+        Ascent_GravityTurn = 2,
+        Coast_To_Apogee = 3,
+        Descent_Aerodynamic = 4,
+        Landing_Hoverslam = 5,
+        Touchdown_Success = 6
+    }
+
+    /// <summary>
     /// Выходная управляющая команда автопилота GNC.
     /// </summary>
     public struct AutopilotCommand
@@ -24,12 +39,11 @@ namespace DSTU.VTVL.Guidance
     /// </summary>
     public class AutopilotGNC
     {
+        public FlightStage Stage = FlightStage.PadA_Prelaunch;
+
         /// <summary>Максимальная скорость переориентации корпуса по тангажу (рад/с, ~4.5 град/с)</summary>
         public double MaxPitchRate = 0.08;
 
-        /// <summary>
-        /// Вычисление команд автопилота для текущего состояния ракеты.
-        /// </summary>
         public AutopilotCommand Update(RocketState s, double dt)
         {
             AutopilotCommand cmd = new AutopilotCommand
@@ -40,89 +54,120 @@ namespace DSTU.VTVL.Guidance
                 PhaseDescription = "Ожидание команды на запуск двигателей",
                 RcsActive = false,
                 GridFinsActive = false,
-                HoverslamActive = s.IsHoverslamActive
+                HoverslamActive = false
             };
 
             double gh = GravityModel.GetGravity(s.PosY);
             double estimatedApogee = s.VelY > 0.0 ? s.PosY + (s.VelY * s.VelY) / (2.0 * gh) : s.PosY;
 
-            // -------------------------------------------------------------
-            // Фаза 1. Вертикальный подъём со стола A до 300 м
-            // -------------------------------------------------------------
-            if (s.Fuel > 2000.0 && s.PosY < 300.0 && s.VelY >= 0.0)
+            switch (Stage)
             {
-                cmd.Throttle = 1.0;
-                cmd.PitchAngle = Math.PI / 2.0;
-                cmd.PhaseName = "ВЕРТИКАЛЬНЫЙ ПОДЪЁМ";
-                cmd.PhaseDescription = $"Высота {s.PosY:F0} м (прохождение приземного слоя)";
-            }
-            // -------------------------------------------------------------
-            // Фаза 2. Гравитационный разворот (программа КР-4 до theta_k = 85.5°)
-            // -------------------------------------------------------------
-            else if (s.Fuel > 2000.0 && s.VelY > 0.0 && estimatedApogee < 105000.0 && s.PosY < 70000.0)
-            {
-                cmd.Throttle = 1.0;
-                // Точная формула КР-4: theta(h) = 90° - 4.5° * ((h - 200) / 69800)^1.5
-                double targetDeg = 90.0 - 4.5 * Math.Pow(Math.Max(0.0, s.PosY - 200.0) / 69800.0, 1.5);
-                cmd.PitchAngle = (targetDeg * Math.PI) / 180.0;
-                cmd.PhaseName = "ГРАВИТАЦИОННЫЙ РАЗВОРОТ";
-                cmd.PhaseDescription = $"Тангаж {targetDeg:F1}° ➔ расчетный апогей {estimatedApogee / 1000.0:F1} км";
-            }
-            // -------------------------------------------------------------
-            // Фаза 3. Отсечка тяги (MECO) и выход на суборбитальный апогей C (> 100 км)
-            // -------------------------------------------------------------
-            else if (s.VelY > 5.0)
-            {
-                cmd.Throttle = 0.0; // Двигатель выключен, экономим топливо на посадку!
-                cmd.PitchAngle = (85.5 * Math.PI) / 180.0; // Суборбитальный тангаж 85.5° по КР-4
-                cmd.PhaseName = s.PosY >= RocketParameters.KarmanLine ? "ОТКРЫТЫЙ КОСМОС (>100 км)" : "ВЫХОД НА АПОГЕЙ C";
-                cmd.PhaseDescription = "Инерционный полёт к апогею C (вакуум, невесомость)";
-            }
-            // -------------------------------------------------------------
-            // Фаза 4. Прохождение апогея: разворот RCS кормой вниз (Flip Maneuver)
-            // -------------------------------------------------------------
-            else if (s.PosY > 2500.0)
-            {
-                cmd.Throttle = 0.0;
-                cmd.RcsActive = (s.PosY > 40000.0);
-                cmd.GridFinsActive = (s.PosY <= 60000.0);
-                cmd.PitchAngle = Math.PI / 2.0; // Нос вверх, двигатель вниз для посадки
-                cmd.PhaseName = s.PosY >= RocketParameters.KarmanLine ? "АПОГЕЙ C: РАЗВОРОТ RCS" : "АЭРОДИНАМИЧЕСКИЙ СПУСК";
-                cmd.PhaseDescription = s.PosY >= RocketParameters.KarmanLine
-                    ? "Маневровые сопла RCS разворачивают ступень кормой вниз"
-                    : "Решётчатые рули (Grid Fins) стабилизируют и тормозят ступень";
-            }
-            // -------------------------------------------------------------
-            // Фаза 5. Посадка: Тормозной импульс Hoverslam (Suicide Burn)
-            // -------------------------------------------------------------
-            else
-            {
-                cmd.GridFinsActive = true;
-                double hBurn = SuicideBurnCalculator.CalculateIgnitionAltitude(s.Mass, s.PosY, s.VelY, 1.55);
+                case FlightStage.PadA_Prelaunch:
+                    if (s.HasLiftoff || s.Time > 0.0)
+                    {
+                        Stage = FlightStage.Ascent_Vertical;
+                    }
+                    cmd.Throttle = 1.0;
+                    cmd.PitchAngle = Math.PI / 2.0;
+                    cmd.PhaseName = "ВЕРТИКАЛЬНЫЙ ПОДЪЁМ";
+                    cmd.PhaseDescription = "Старт со стола Pad A, набор вертикальной скорости";
+                    break;
 
-                if ((s.PosY <= hBurn || s.IsHoverslamActive) && s.Fuel > 0.0 && s.PosY < 2000.0)
-                {
+                case FlightStage.Ascent_Vertical:
+                    cmd.Throttle = 1.0;
+                    cmd.PitchAngle = Math.PI / 2.0;
+                    cmd.PhaseName = "ВЕРТИКАЛЬНЫЙ ПОДЪЁМ";
+                    cmd.PhaseDescription = $"Высота {s.PosY:F0} м (прохождение приземного слоя)";
+
+                    if (s.PosY >= 300.0)
+                    {
+                        Stage = FlightStage.Ascent_GravityTurn;
+                    }
+                    break;
+
+                case FlightStage.Ascent_GravityTurn:
+                    cmd.Throttle = 1.0;
+
+                    // Наклон тангажа к посадочной барже B (X = 25 270 м)
+                    // Тангаж плавно снижается от 90.0° до 75.3° (наклон 14.7° к горизонту)
+                    double turnProgress = Math.Pow(Math.Max(0.0, s.PosY - 300.0) / 69700.0, 1.25);
+                    double targetPitchDeg = 90.0 - 14.7 * Math.Min(1.0, turnProgress);
+
+                    cmd.PitchAngle = (targetPitchDeg * Math.PI) / 180.0;
+                    cmd.PhaseName = "ГРАВИТАЦИОННЫЙ РАЗВОРОТ";
+                    cmd.PhaseDescription = $"Тангаж {targetPitchDeg:F1}° ➔ расчетный апогей {estimatedApogee / 1000.0:F1} км";
+
+                    // Условие отсечки тяги (MECO): достижение апогея > 105 км ИЛИ достижение посадочного резерва топлива
+                    if (estimatedApogee >= 105000.0 || s.Fuel <= RocketParameters.MinLandingFuelReserve)
+                    {
+                        Stage = FlightStage.Coast_To_Apogee;
+                    }
+                    break;
+
+                case FlightStage.Coast_To_Apogee:
+                    cmd.Throttle = 0.0;
+                    cmd.PitchAngle = (75.3 * Math.PI) / 180.0;
+                    cmd.PhaseName = s.PosY >= RocketParameters.KarmanLine ? "ОТКРЫТЫЙ КОСМОС (>100 км)" : "ВЫХОД НА АПОГЕЙ C";
+                    cmd.PhaseDescription = "Инерционный полёт к апогею C (вакуум, невесомость)";
+
+                    // Прохождение вершины траектории (скорость по Y сменила знак на отрицательный)
+                    if (s.VelY <= 0.0)
+                    {
+                        Stage = FlightStage.Descent_Aerodynamic;
+                    }
+                    break;
+
+                case FlightStage.Descent_Aerodynamic:
+                    cmd.Throttle = 0.0;
+                    cmd.RcsActive = (s.PosY > 40000.0);
+                    cmd.GridFinsActive = (s.PosY <= 65000.0);
+                    
+                    // Управление планированием в направлении баржи с помощью решетчатых рулей
+                    double dx = RocketParameters.PadB_X - s.PosX;
+                    double desiredGlideVx = Math.Max(-25.0, Math.Min(25.0, dx * 0.04));
+                    double glideTilt = Math.Max(-0.06, Math.Min(0.06, (desiredGlideVx - s.VelX) * 0.02));
+                    cmd.PitchAngle = Math.PI / 2.0 + glideTilt; // Носом вверх, двигатели вниз
+
+                    cmd.PhaseName = s.PosY >= RocketParameters.KarmanLine ? "АПОГЕЙ C: РАЗВОРОТ RCS" : "УПРАВЛЯЕМЫЙ СПУСК К БАРЖЕ B";
+                    cmd.PhaseDescription = $"Аэродинамическое торможение решётчатыми рулями (dx = {dx / 1000.0:F1} км)";
+
+                    // Точная точка зажигания Suicide Burn (1.085 запас)
+                    double hBurn = SuicideBurnCalculator.CalculateIgnitionAltitude(s.Mass, s.PosY, s.VelY, 1.085);
+                    if (s.PosY <= hBurn && s.PosY < 3000.0 && s.VelY < -10.0 && s.Fuel > 0.0)
+                    {
+                        Stage = FlightStage.Landing_Hoverslam;
+                    }
+                    break;
+
+                case FlightStage.Landing_Hoverslam:
                     cmd.HoverslamActive = true;
                     s.IsHoverslamActive = true;
+                    cmd.GridFinsActive = true;
                     cmd.PhaseName = "ПОСАДКА: HOVERSLAM (SUICIDE BURN)";
 
                     cmd.Throttle = SuicideBurnCalculator.ComputeLandingThrottle(s.Mass, s.PosY, s.VelY);
-                    double tilt = SuicideBurnCalculator.ComputeSteeringTilt(s.PosX, RocketParameters.PadB_X, s.VelX);
-                    cmd.PitchAngle = Math.PI / 2.0 + tilt;
+                    double steerTilt = SuicideBurnCalculator.ComputeSteeringTilt(s.PosX, RocketParameters.PadB_X, s.VelX);
+                    cmd.PitchAngle = Math.PI / 2.0 + steerTilt;
 
-                    cmd.PhaseDescription = $"🔥 Торможение двигателем! h = {s.PosY:F1} м, Vy = {s.VelY:F1} м/с";
-                }
-                else
-                {
+                    cmd.PhaseDescription = $"🔥 Торможение двигателем! h = {s.PosY:F1} м, Vy = {s.VelY:F1} м/с, Vx = {s.VelX:F1} м/с";
+
+                    // Касание палубы баржи
+                    if (s.PosY <= 1.0 || (s.PosY <= 2.5 && Math.Abs(s.VelY) <= 2.0))
+                    {
+                        Stage = FlightStage.Touchdown_Success;
+                    }
+                    break;
+
+                case FlightStage.Touchdown_Success:
                     cmd.Throttle = 0.0;
-                    cmd.PhaseName = "УПРАВЛЯЕМЫЙ СПУСК К БАРЖЕ B";
-                    double dx = RocketParameters.PadB_X - s.PosX;
-                    cmd.PitchAngle = Math.PI / 2.0 - s.VelX * 0.02 + Math.Max(-0.06, Math.Min(0.06, dx * 0.0005));
-                    cmd.PhaseDescription = $"Аэродинамическое торможение решётчатыми рулями (dx = {dx / 1000.0:F1} км)";
-                }
+                    cmd.PitchAngle = Math.PI / 2.0;
+                    cmd.PhaseName = "МЯГКАЯ ПОСАДКА НА БАРЖУ B (УСПЕХ)";
+                    cmd.PhaseDescription = $"Касание завершено: Vy = {s.VelY:F2} м/с, Vx = {s.VelX:F2} м/с";
+                    s.IsLanded = true;
+                    break;
             }
 
-            // Плавное изменение угла тангажа с учётом максимальной угловой скорости (инерция ступени)
+            // Плавное изменение угла тангажа с учётом максимальной угловой скорости
             double dPitch = cmd.PitchAngle - s.Pitch;
             double pitchStep = Math.Max(-MaxPitchRate * dt, Math.Min(MaxPitchRate * dt, dPitch));
             s.Pitch += pitchStep;
