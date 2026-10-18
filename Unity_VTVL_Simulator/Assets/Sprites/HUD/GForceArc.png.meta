@@ -1,0 +1,1016 @@
+fileFormatVersion: 2
+guid: cbe05632797810843b6d71dbf7ffc77c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5185954487695490687
+    second: GForceArc_0
+  - first:
+      213: -8640941931468555134
+    second: GForceArc_1
+  - first:
+      213: 1075896330070401109
+    second: GForceArc_2
+  - first:
+      213: 3454304229513411957
+    second: GForceArc_3
+  - first:
+      213: 5909599876871559012
+    second: GForceArc_4
+  - first:
+      213: 8539955811564152531
+    second: GForceArc_5
+  - first:
+      213: -8567522795550759661
+    second: GForceArc_6
+  - first:
+      213: -9074877651591441189
+    second: GForceArc_7
+  - first:
+      213: -4667887229717126624
+    second: GForceArc_8
+  - first:
+      213: 7243034447850364980
+    second: GForceArc_9
+  - first:
+      213: 8994757750102888841
+    second: GForceArc_10
+  - first:
+      213: 7320664202607006965
+    second: GForceArc_11
+  - first:
+      213: -8398599604051043854
+    second: GForceArc_12
+  - first:
+      213: 6088927241098270617
+    second: GForceArc_13
+  - first:
+      213: -4658678735185530675
+    second: GForceArc_14
+  - first:
+      213: 7597917354588719560
+    second: GForceArc_15
+  - first:
+      213: -1305632191186398288
+    second: GForceArc_16
+  - first:
+      213: 6020035085868121729
+    second: GForceArc_17
+  - first:
+      213: 5497960742136803909
+    second: GForceArc_18
+  - first:
+      213: 1622065407381444949
+    second: GForceArc_19
+  - first:
+      213: -5310903301067053282
+    second: GForceArc_20
+  - first:
+      213: 6873661244051312823
+    second: GForceArc_21
+  - first:
+      213: 1619039693267181581
+    second: GForceArc_22
+  - first:
+      213: 7216353755586902980
+    second: GForceArc_23
+  - first:
+      213: 6827752930082353224
+    second: GForceArc_24
+  - first:
+      213: -4620502387805849880
+    second: GForceArc_25
+  - first:
+      213: -1321382071957626147
+    second: GForceArc_26
+  - first:
+      213: 1844291761562036418
+    second: GForceArc_27
+  - first:
+      213: 6667255004644924422
+    second: GForceArc_28
+  - first:
+      213: 6393915893394578720
+    second: GForceArc_29
+  - first:
+      213: -6602482965866704982
+    second: GForceArc_30
+  - first:
+      213: 6747235715359914476
+    second: GForceArc_31
+  - first:
+      213: -4805943582747889186
+    second: GForceArc_32
+  - first:
+      213: 8647144872903729077
+    second: GForceArc_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GForceArc_0
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1104
+        width: 63
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ebe64512638f740800000000000000
+      internalID: 5185954487695490687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1056
+        width: 127
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28cf9025815351880800000000000000
+      internalID: -8640941931468555134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_2
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 580
+        width: 308
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5502ef8030a5eee00800000000000000
+      internalID: 1075896330070401109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_3
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1112
+        width: 121
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57db642256720ff20800000000000000
+      internalID: 3454304229513411957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_4
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 827
+        width: 170
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4671f9117cd130250800000000000000
+      internalID: 5909599876871559012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_5
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1040
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d660d16094048670800000000000000
+      internalID: 8539955811564152531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_6
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 634
+        width: 146
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 315a22ef86b0a1980800000000000000
+      internalID: -8567522795550759661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_7
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 956
+        width: 120
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4d2cc4bde8f0280800000000000000
+      internalID: -9074877651591441189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_8
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 957
+        width: 119
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022e02dcb45583fb0800000000000000
+      internalID: -4667887229717126624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_9
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 662
+        width: 146
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 430e900847d648460800000000000000
+      internalID: 7243034447850364980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_10
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 885
+        width: 156
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9811397748cc3dc70800000000000000
+      internalID: 8994757750102888841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 893
+        width: 8
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f41f444e49389560800000000000000
+      internalID: 7320664202607006965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_12
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 710
+        width: 172
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f91dc5682e227b80800000000000000
+      internalID: -8398599604051043854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 721
+        width: 48
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9979cd4b017308450800000000000000
+      internalID: 6088927241098270617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_14
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 710
+        width: 97
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc0b9928f5c095fb0800000000000000
+      internalID: -4658678735185530675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_15
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 721
+        width: 51
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c949091499317960800000000000000
+      internalID: 7597917354588719560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_16
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 578
+        width: 84
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3150d807671ede0800000000000000
+      internalID: -1305632191186398288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_17
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 578
+        width: 230
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ebe8cd3067b8350800000000000000
+      internalID: 6020035085868121729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 371
+        width: 92
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5427b106a2eac4c40800000000000000
+      internalID: 5497960742136803909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_19
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 445
+        width: 171
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5599b69d4ebb28610800000000000000
+      internalID: 1622065407381444949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_20
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 298
+        width: 135
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e17e2770691eb46b0800000000000000
+      internalID: -5310903301067053282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_21
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 103
+        width: 232
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b05c06bb76246f50800000000000000
+      internalID: 6873661244051312823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_22
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 304
+        width: 182
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d00a272e50cf77610800000000000000
+      internalID: 1619039693267181581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_23
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 361
+        width: 257
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cb305fb183a52460800000000000000
+      internalID: 7216353755586902980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_24
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 227
+        width: 119
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840f0bb6d1d01ce50800000000000000
+      internalID: 6827752930082353224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_25
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 114
+        width: 251
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e6fcfa0f8da0efb0800000000000000
+      internalID: -4620502387805849880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_26
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 507
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2656ca10289ade0800000000000000
+      internalID: -1321382071957626147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_27
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 327
+        width: 102
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8a51ee59d389910800000000000000
+      internalID: 1844291761562036418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_28
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 299
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60c5ec22a19d68c50800000000000000
+      internalID: 6667255004644924422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_29
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 443
+        width: 78
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d128de0a0cbb850800000000000000
+      internalID: 6393915893394578720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_30
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 505
+        width: 50
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf82f759b44f54a0800000000000000
+      internalID: -6602482965866704982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_31
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 41
+        width: 128
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce93bdd722ff2ad50800000000000000
+      internalID: 6747235715359914476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_32
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 55
+        width: 89
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed17eb346cbdd4db0800000000000000
+      internalID: -4805943582747889186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GForceArc_33
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 49
+        width: 150
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf54c68274d00870800000000000000
+      internalID: 8647144872903729077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GForceArc_0: 5185954487695490687
+      GForceArc_1: -8640941931468555134
+      GForceArc_10: 8994757750102888841
+      GForceArc_11: 7320664202607006965
+      GForceArc_12: -8398599604051043854
+      GForceArc_13: 6088927241098270617
+      GForceArc_14: -4658678735185530675
+      GForceArc_15: 7597917354588719560
+      GForceArc_16: -1305632191186398288
+      GForceArc_17: 6020035085868121729
+      GForceArc_18: 5497960742136803909
+      GForceArc_19: 1622065407381444949
+      GForceArc_2: 1075896330070401109
+      GForceArc_20: -5310903301067053282
+      GForceArc_21: 6873661244051312823
+      GForceArc_22: 1619039693267181581
+      GForceArc_23: 7216353755586902980
+      GForceArc_24: 6827752930082353224
+      GForceArc_25: -4620502387805849880
+      GForceArc_26: -1321382071957626147
+      GForceArc_27: 1844291761562036418
+      GForceArc_28: 6667255004644924422
+      GForceArc_29: 6393915893394578720
+      GForceArc_3: 3454304229513411957
+      GForceArc_30: -6602482965866704982
+      GForceArc_31: 6747235715359914476
+      GForceArc_32: -4805943582747889186
+      GForceArc_33: 8647144872903729077
+      GForceArc_4: 5909599876871559012
+      GForceArc_5: 8539955811564152531
+      GForceArc_6: -8567522795550759661
+      GForceArc_7: -9074877651591441189
+      GForceArc_8: -4667887229717126624
+      GForceArc_9: 7243034447850364980
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

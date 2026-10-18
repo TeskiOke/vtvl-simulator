@@ -1,0 +1,938 @@
+fileFormatVersion: 2
+guid: b96630a26bf0af449a36731e1876a7c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3082991575323790086
+    second: SpeedArc_0
+  - first:
+      213: 127802813531206489
+    second: SpeedArc_1
+  - first:
+      213: 6736244095283828802
+    second: SpeedArc_2
+  - first:
+      213: 2997823332201201295
+    second: SpeedArc_3
+  - first:
+      213: -2847610247676799464
+    second: SpeedArc_4
+  - first:
+      213: -7240793301610710238
+    second: SpeedArc_5
+  - first:
+      213: -4109467490825051039
+    second: SpeedArc_6
+  - first:
+      213: 5492701772421128518
+    second: SpeedArc_7
+  - first:
+      213: 5591601521650565607
+    second: SpeedArc_8
+  - first:
+      213: -671884309640182039
+    second: SpeedArc_9
+  - first:
+      213: 3475650923778243360
+    second: SpeedArc_10
+  - first:
+      213: 1629353696462852429
+    second: SpeedArc_11
+  - first:
+      213: -305239518143479608
+    second: SpeedArc_12
+  - first:
+      213: 406840631404004646
+    second: SpeedArc_13
+  - first:
+      213: 4228281318767702591
+    second: SpeedArc_14
+  - first:
+      213: 9133164056371086448
+    second: SpeedArc_15
+  - first:
+      213: -8651972541667058581
+    second: SpeedArc_16
+  - first:
+      213: -4737060332934403561
+    second: SpeedArc_17
+  - first:
+      213: 1304684656904070999
+    second: SpeedArc_18
+  - first:
+      213: 9035061407543213184
+    second: SpeedArc_19
+  - first:
+      213: -1371733767670125722
+    second: SpeedArc_20
+  - first:
+      213: -3006298524791934531
+    second: SpeedArc_21
+  - first:
+      213: -2891722984266682030
+    second: SpeedArc_22
+  - first:
+      213: 2797169023628035950
+    second: SpeedArc_23
+  - first:
+      213: 6083936190651212756
+    second: SpeedArc_24
+  - first:
+      213: -1912158383599851502
+    second: SpeedArc_25
+  - first:
+      213: 5618868829898752973
+    second: SpeedArc_26
+  - first:
+      213: -3248483660646316088
+    second: SpeedArc_27
+  - first:
+      213: 693447564945790099
+    second: SpeedArc_28
+  - first:
+      213: -5272626183132124617
+    second: SpeedArc_29
+  - first:
+      213: 4484157656423130890
+    second: SpeedArc_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpeedArc_0
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 886
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af4bd432f730735d0800000000000000
+      internalID: -3082991575323790086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 842
+        width: 94
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953b2d55bfb06c100800000000000000
+      internalID: 127802813531206489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_2
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 885
+        width: 93
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24817b38052fb7d50800000000000000
+      internalID: 6736244095283828802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_3
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 885
+        width: 92
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8efa3fff686a9920800000000000000
+      internalID: 2997823332201201295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_4
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 842
+        width: 95
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816567821914b78d0800000000000000
+      internalID: -2847610247676799464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_5
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 885
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b37750bd8838b90800000000000000
+      internalID: -7240793301610710238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 758
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1646b59071d38f6c0800000000000000
+      internalID: -4109467490825051039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 771
+        width: 88
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641e152192ff93c40800000000000000
+      internalID: 5492701772421128518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_8
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 771
+        width: 88
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1048755fb599d40800000000000000
+      internalID: 5591601521650565607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_9
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 757
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e60db9b7ccfca6f0800000000000000
+      internalID: -671884309640182039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_10
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 677
+        width: 76
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b7f03b91efb3030800000000000000
+      internalID: 3475650923778243360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_11
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 677
+        width: 76
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d415323ed80ac9610800000000000000
+      internalID: 1629353696462852429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_12
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 583
+        width: 34
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c085a5864293cbf0800000000000000
+      internalID: -305239518143479608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 570
+        width: 57
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6250803166365a500800000000000000
+      internalID: 406840631404004646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_14
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 570
+        width: 57
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f32b19ff47fddaa30800000000000000
+      internalID: 4228281318767702591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_15
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 582
+        width: 34
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0744d57d1548fbe70800000000000000
+      internalID: 9133164056371086448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_16
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 454
+        width: 40
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6c508f30d40ee780800000000000000
+      internalID: -8651972541667058581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_17
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 454
+        width: 40
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ae9d7a9b4924eb0800000000000000
+      internalID: -4737060332934403561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_18
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 387
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7576bae68cb2b1210800000000000000
+      internalID: 1304684656904070999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_19
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 337
+        width: 60
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c3478fa7cf26d70800000000000000
+      internalID: 9035061407543213184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_20
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 337
+        width: 61
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b2d93f76f96fce0800000000000000
+      internalID: -1371733767670125722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_21
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 386
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1fef47b6b7746d0800000000000000
+      internalID: -3006298524791934531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_22
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 234
+        width: 79
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251b3fd44498ed7d0800000000000000
+      internalID: -2891722984266682030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_23
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 210
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67431e286a81d620800000000000000
+      internalID: 2797169023628035950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_24
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 155
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d3a8e73bbb7e6450800000000000000
+      internalID: 6083936190651212756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_25
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 155
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218ee37c416a675e0800000000000000
+      internalID: -1912158383599851502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_26
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 234
+        width: 78
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc341a54e6b3afd40800000000000000
+      internalID: 5618868829898752973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_27
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 209
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7048462511be2d0800000000000000
+      internalID: -3248483660646316088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_28
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 88
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39414f2e2ee9f9900800000000000000
+      internalID: 693447564945790099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_29
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 87
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a6cf80c6ed3d6b0800000000000000
+      internalID: -5272626183132124617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedArc_30
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 45
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07e2f361adea3e30800000000000000
+      internalID: 4484157656423130890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpeedArc_0: -3082991575323790086
+      SpeedArc_1: 127802813531206489
+      SpeedArc_10: 3475650923778243360
+      SpeedArc_11: 1629353696462852429
+      SpeedArc_12: -305239518143479608
+      SpeedArc_13: 406840631404004646
+      SpeedArc_14: 4228281318767702591
+      SpeedArc_15: 9133164056371086448
+      SpeedArc_16: -8651972541667058581
+      SpeedArc_17: -4737060332934403561
+      SpeedArc_18: 1304684656904070999
+      SpeedArc_19: 9035061407543213184
+      SpeedArc_2: 6736244095283828802
+      SpeedArc_20: -1371733767670125722
+      SpeedArc_21: -3006298524791934531
+      SpeedArc_22: -2891722984266682030
+      SpeedArc_23: 2797169023628035950
+      SpeedArc_24: 6083936190651212756
+      SpeedArc_25: -1912158383599851502
+      SpeedArc_26: 5618868829898752973
+      SpeedArc_27: -3248483660646316088
+      SpeedArc_28: 693447564945790099
+      SpeedArc_29: -5272626183132124617
+      SpeedArc_3: 2997823332201201295
+      SpeedArc_30: 4484157656423130890
+      SpeedArc_4: -2847610247676799464
+      SpeedArc_5: -7240793301610710238
+      SpeedArc_6: -4109467490825051039
+      SpeedArc_7: 5492701772421128518
+      SpeedArc_8: 5591601521650565607
+      SpeedArc_9: -671884309640182039
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,938 @@
+fileFormatVersion: 2
+guid: f1f1b05d5eb078b42b868a2517b7b942
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 918427844176685403
+    second: VerticalSpeedArc_0
+  - first:
+      213: -4329278534724397240
+    second: VerticalSpeedArc_1
+  - first:
+      213: 4829596387382322413
+    second: VerticalSpeedArc_2
+  - first:
+      213: -2467488500357462570
+    second: VerticalSpeedArc_3
+  - first:
+      213: -2212756250419600721
+    second: VerticalSpeedArc_4
+  - first:
+      213: 3936133532007016742
+    second: VerticalSpeedArc_5
+  - first:
+      213: -9040375764171144227
+    second: VerticalSpeedArc_6
+  - first:
+      213: 6610684963806617483
+    second: VerticalSpeedArc_7
+  - first:
+      213: -1507069533749857055
+    second: VerticalSpeedArc_8
+  - first:
+      213: -4931814281486106442
+    second: VerticalSpeedArc_9
+  - first:
+      213: 7810608985342195362
+    second: VerticalSpeedArc_10
+  - first:
+      213: 3130940649623629497
+    second: VerticalSpeedArc_11
+  - first:
+      213: 1740807006800171943
+    second: VerticalSpeedArc_12
+  - first:
+      213: 3951853380366758114
+    second: VerticalSpeedArc_13
+  - first:
+      213: -3536912318145392083
+    second: VerticalSpeedArc_14
+  - first:
+      213: 9117198642322319910
+    second: VerticalSpeedArc_15
+  - first:
+      213: -2284918603571651299
+    second: VerticalSpeedArc_16
+  - first:
+      213: -842231452408687030
+    second: VerticalSpeedArc_17
+  - first:
+      213: 2161858377720163029
+    second: VerticalSpeedArc_18
+  - first:
+      213: -8092555647698056975
+    second: VerticalSpeedArc_19
+  - first:
+      213: -6817748111832774014
+    second: VerticalSpeedArc_20
+  - first:
+      213: -4045843816747040708
+    second: VerticalSpeedArc_21
+  - first:
+      213: 7066111284208026732
+    second: VerticalSpeedArc_22
+  - first:
+      213: -5368940659584242624
+    second: VerticalSpeedArc_23
+  - first:
+      213: -3196005152536985671
+    second: VerticalSpeedArc_24
+  - first:
+      213: 2335086990517877284
+    second: VerticalSpeedArc_25
+  - first:
+      213: -7720975919620409338
+    second: VerticalSpeedArc_26
+  - first:
+      213: -399253128186550901
+    second: VerticalSpeedArc_27
+  - first:
+      213: -412396699049160479
+    second: VerticalSpeedArc_28
+  - first:
+      213: -6052385628071896508
+    second: VerticalSpeedArc_29
+  - first:
+      213: -8295969648772729106
+    second: VerticalSpeedArc_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VerticalSpeedArc_0
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 767
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b59aafb1249eebc00800000000000000
+      internalID: 918427844176685403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_1
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 732
+        width: 77
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84757043c105be3c0800000000000000
+      internalID: -4329278534724397240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_2
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 764
+        width: 75
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4ee66735c260340800000000000000
+      internalID: 4829596387382322413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_3
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 765
+        width: 75
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d505d04848b1cdd0800000000000000
+      internalID: -2467488500357462570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_4
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 733
+        width: 77
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa2e637f9e5ba41e0800000000000000
+      internalID: -2212756250419600721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 766
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62928c3c794ff9630800000000000000
+      internalID: 3936133532007016742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_6
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 667
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd34784f3222a8280800000000000000
+      internalID: -9040375764171144227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_7
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 600
+        width: 63
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8f95bd13feddbb50800000000000000
+      internalID: 6610684963806617483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_8
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 674
+        width: 78
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4b60d6e30d51be0800000000000000
+      internalID: -1507069533749857055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_9
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 674
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b082d57a0dae8bb0800000000000000
+      internalID: -4931814281486106442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_10
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 600
+        width: 64
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6bbc26d7bd46c60800000000000000
+      internalID: 7810608985342195362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_11
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 667
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bea5a1bee5537b20800000000000000
+      internalID: 3130940649623629497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 527
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3d5dedfb6982810800000000000000
+      internalID: 1740807006800171943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_13
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 516
+        width: 48
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0ff2d26bdc7d630800000000000000
+      internalID: 3951853380366758114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_14
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 516
+        width: 48
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d229d3b6cfc5aeec0800000000000000
+      internalID: -3536912318145392083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_15
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 527
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62aab463cdbc68e70800000000000000
+      internalID: 9117198642322319910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 423
+        width: 32
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d1e65d2a65a40e0800000000000000
+      internalID: -2284918603571651299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_17
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 423
+        width: 33
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a46d484d4facf44f0800000000000000
+      internalID: -842231452408687030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_18
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 371
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da66b29db6700e10800000000000000
+      internalID: 2161858377720163029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_19
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 333
+        width: 51
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f840edb38771bf80800000000000000
+      internalID: -8092555647698056975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_20
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 333
+        width: 51
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a0e1ad63e7261a0800000000000000
+      internalID: -6817748111832774014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_21
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 371
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3005160c764ad7c0800000000000000
+      internalID: -4045843816747040708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_22
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 256
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c64499e66cedf0260800000000000000
+      internalID: 7066111284208026732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_23
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 233
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04c645d7ae0bd75b0800000000000000
+      internalID: -5368940659584242624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_24
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 193
+        width: 75
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bff6b63f3285a3d0800000000000000
+      internalID: -3196005152536985671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_25
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 193
+        width: 76
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a347dfe35e76020800000000000000
+      internalID: 2335086990517877284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_26
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 256
+        width: 64
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6083eaffe4599d490800000000000000
+      internalID: -7720975919620409338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_27
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 233
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b852afe2561957af0800000000000000
+      internalID: -399253128186550901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_28
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 149
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e091ae136fd64af0800000000000000
+      internalID: -412396699049160479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_29
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 150
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44a5813965b910ca0800000000000000
+      internalID: -6052385628071896508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalSpeedArc_30
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 113
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6ba71fe8bcedc80800000000000000
+      internalID: -8295969648772729106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      VerticalSpeedArc_0: 918427844176685403
+      VerticalSpeedArc_1: -4329278534724397240
+      VerticalSpeedArc_10: 7810608985342195362
+      VerticalSpeedArc_11: 3130940649623629497
+      VerticalSpeedArc_12: 1740807006800171943
+      VerticalSpeedArc_13: 3951853380366758114
+      VerticalSpeedArc_14: -3536912318145392083
+      VerticalSpeedArc_15: 9117198642322319910
+      VerticalSpeedArc_16: -2284918603571651299
+      VerticalSpeedArc_17: -842231452408687030
+      VerticalSpeedArc_18: 2161858377720163029
+      VerticalSpeedArc_19: -8092555647698056975
+      VerticalSpeedArc_2: 4829596387382322413
+      VerticalSpeedArc_20: -6817748111832774014
+      VerticalSpeedArc_21: -4045843816747040708
+      VerticalSpeedArc_22: 7066111284208026732
+      VerticalSpeedArc_23: -5368940659584242624
+      VerticalSpeedArc_24: -3196005152536985671
+      VerticalSpeedArc_25: 2335086990517877284
+      VerticalSpeedArc_26: -7720975919620409338
+      VerticalSpeedArc_27: -399253128186550901
+      VerticalSpeedArc_28: -412396699049160479
+      VerticalSpeedArc_29: -6052385628071896508
+      VerticalSpeedArc_3: -2467488500357462570
+      VerticalSpeedArc_30: -8295969648772729106
+      VerticalSpeedArc_4: -2212756250419600721
+      VerticalSpeedArc_5: 3936133532007016742
+      VerticalSpeedArc_6: -9040375764171144227
+      VerticalSpeedArc_7: 6610684963806617483
+      VerticalSpeedArc_8: -1507069533749857055
+      VerticalSpeedArc_9: -4931814281486106442
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

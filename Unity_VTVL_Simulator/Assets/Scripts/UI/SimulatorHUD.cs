@@ -38,8 +38,8 @@ namespace DSTU.VTVL.UnityAdapters
 
         private void Update()
         {
-            // Горячая клавиша H для полного скрытия / показа интерфейса
-            if (Input.GetKeyDown(KeyCode.H))
+            // Горячая клавиша F1 для инженерного оверлея
+            if (Input.GetKeyDown(KeyCode.F1))
             {
                 ShowHUD = !ShowHUD;
             }
@@ -55,11 +55,6 @@ namespace DSTU.VTVL.UnityAdapters
         {
             if (!ShowHUD)
             {
-                // Маленькая плашка подсказки для возврата HUD
-                if (GUI.Button(new Rect(10, 10, 140, 26), "👁 Показать HUD (H)"))
-                {
-                    ShowHUD = true;
-                }
                 return;
             }
 

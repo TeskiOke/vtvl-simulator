@@ -8,6 +8,7 @@ Unity_VTVL_Simulator/[Ll]ogs/
 Unity_VTVL_Simulator/[Uu]ser[Ss]ettings/
 Unity_VTVL_Simulator/[Mm]emoryCaptures/
 Unity_VTVL_Simulator/AssetStoreTools*
+Unity_VTVL_Simulator/mono_crash*
 
 # Visual Studio / Rider / VSCode
 .vs/
@@ -35,27 +36,34 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# Веб-симуляторы и браузерные файлы (исключены из репозитория)
-Simulation_Web/
-*.html
-
-# Черновики, рабочие тетради и служебные сообщения команды
-*Рабочая_тетрадь*
-*сообщение*
-*.pages
-*.pdf
-*.xlsx
-*.xls
-*.txt
-!Unity_VTVL_Simulator/ProjectSettings/ProjectVersion.txt
-
-# Документы Word (все исключены, кроме утвержденного регламента команды)
-*.docx
-!Регламент_и_задачи_команды_VTVL_Orbital.docx
-
-# Служебные исходные материалы и внутренние заметки команды
+# Единая папка всей документации и служебных материалов
+Docs/
 Source_Documents/
 DGTY_SOFT/
+Project_Management/
+Simulation_Web/
+Scripts/
+
+# Веб-страницы, отчеты и браузерные файлы
+*.html
+
+# Логи телеметрии
+FlightReport_VTVL30.csv
+FlightReport_VTVL30.html
+FlightReport*.csv
+FlightReport*.html
+
+# Документы Word, таблицы, PDF, презентации и черновики
+*.docx
+*.xlsx
+*.xls
+*.pdf
+*.pages
+*.odt
+*Рабочая_тетрадь*
+*сообщение*
+*.txt
+!Unity_VTVL_Simulator/ProjectSettings/ProjectVersion.txt
 
 # Служебные скрипты и отчеты
 create_spec_docx.py

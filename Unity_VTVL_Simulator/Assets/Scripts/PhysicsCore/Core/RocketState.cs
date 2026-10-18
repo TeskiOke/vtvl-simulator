@@ -194,6 +194,12 @@ namespace DSTU.VTVL.PhysicsCore
         /// <summary>Угол тангажа в градусах [0..180]</summary>
         public double PitchDegrees => (Pitch * 180.0) / Math.PI;
 
+        /// <summary>Угол крена в градусах</summary>
+        public double RollDegrees => (Roll * 180.0) / Math.PI;
+
+        /// <summary>Угол рыскания в градусах</summary>
+        public double YawDegrees => (Yaw * 180.0) / Math.PI;
+
         /// <summary>Остаток топлива в процентах [0..100%]</summary>
         public double FuelPercent => Math.Max(0.0, Math.Min(100.0, (Fuel / RocketParameters.PropellantMassInitial) * 100.0));
 

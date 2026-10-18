@@ -89,9 +89,33 @@ namespace DSTU.VTVL.UnityAdapters
             ResetSimulation();
         }
 
+        public bool IsSimulationActive => _isSimulationActive;
+
         private void Update()
         {
-            // Горячие клавиши управления
+            // Старт / Запуск по клавише ПРОБЕЛ
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (!_isSimulationActive)
+                {
+                    StartSimulation();
+                    if (!IsAutopilotEnabled && ManualThrottle < 0.5f)
+                    {
+                        ManualThrottle = 1.0f;
+                    }
+                    Debug.Log($"[SIM] Запуск симуляции по клавише ПРОБЕЛ! Режим: {(IsAutopilotEnabled ? "АВТОПИЛОТ" : "РУЧНОЕ УПРАВЛЕНИЕ")}");
+                }
+                else
+                {
+                    // В ручном режиме пробел даёт 100% форсаж тяги
+                    if (!IsAutopilotEnabled)
+                    {
+                        ManualThrottle = 1.0f;
+                    }
+                }
+            }
+
+            // Переключение автопилота по TAB
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 IsAutopilotEnabled = !IsAutopilotEnabled;
@@ -100,28 +124,28 @@ namespace DSTU.VTVL.UnityAdapters
 
             if (!IsAutopilotEnabled)
             {
-                // Управление тягой W / S
+                // Управление тягой W / S (или стрелки вверх / вниз)
                 if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
                 {
-                    ManualThrottle = Mathf.Clamp01(ManualThrottle + 0.4f * Time.unscaledDeltaTime);
+                    if (!_isSimulationActive) StartSimulation();
+                    ManualThrottle = Mathf.Clamp01(ManualThrottle + 0.6f * Time.unscaledDeltaTime);
                 }
                 if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
                 {
-                    ManualThrottle = Mathf.Clamp01(ManualThrottle - 0.4f * Time.unscaledDeltaTime);
+                    ManualThrottle = Mathf.Clamp01(ManualThrottle - 0.6f * Time.unscaledDeltaTime);
                 }
 
-                // Управление тангажом A / D
+                // Управление тангажом A / D (наклон корпуса влево / вправо)
                 if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
                 {
-                    ManualPitchDegrees = Mathf.Clamp(ManualPitchDegrees + 20f * Time.unscaledDeltaTime, 0f, 180f);
+                    ManualPitchDegrees = Mathf.Clamp(ManualPitchDegrees + 25f * Time.unscaledDeltaTime, 0f, 180f);
                 }
                 if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
                 {
-                    ManualPitchDegrees = Mathf.Clamp(ManualPitchDegrees - 20f * Time.unscaledDeltaTime, 0f, 180f);
+                    ManualPitchDegrees = Mathf.Clamp(ManualPitchDegrees - 25f * Time.unscaledDeltaTime, 0f, 180f);
                 }
 
-                // Экстренная тяга Space / Сброс тяги X
-                if (Input.GetKeyDown(KeyCode.Space)) ManualThrottle = 1.0f;
+                // Сброс тяги X
                 if (Input.GetKeyDown(KeyCode.X)) ManualThrottle = 0.0f;
             }
 
@@ -149,6 +173,12 @@ namespace DSTU.VTVL.UnityAdapters
             {
                 ShowTrajectory = !ShowTrajectory;
                 if (TrajectoryLine != null) TrajectoryLine.enabled = ShowTrajectory;
+            }
+
+            // Пауза по Escape
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ToggleSimulation();
             }
 
             // Ускорение времени [ и ]

@@ -28,7 +28,12 @@ namespace DSTU.VTVL.EditorTools
         [MenuItem("VTVL Simulator/🚀 Собрать кинематографическую 3D-сцену (AAA Visuals)", false, 1)]
         public static void BuildCompleteFlightScene()
         {
+            // 0. Сначала упаковываем и настраиваем актуальный префаб HUD Canvas
+            HUDPrefabBuilder.CreateHUDPrefab();
+
+            // Создаем чистую новую сцену VTVL_MainFlight
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            SceneManager.SetActiveScene(scene);
 
             // =========================================================
             // 1. ОСВЕЩЕНИЕ И СОЛНЦЕ
@@ -170,6 +175,16 @@ namespace DSTU.VTVL.EditorTools
             ventObj.transform.SetParent(padGroup.transform, false);
             ventObj.transform.position = new Vector3(-3f, 32f, 0f);
             ParticleSystem ventPs = ventObj.AddComponent<ParticleSystem>();
+            ParticleSystemRenderer ventRend = ventObj.GetComponent<ParticleSystemRenderer>();
+            Shader partShader = Shader.Find("Universal Render Pipeline/Particles/Unlit") 
+                             ?? Shader.Find("Particles/Standard Unlit") 
+                             ?? Shader.Find("Sprites/Default");
+            if (partShader != null)
+            {
+                Material ventMat = new Material(partShader);
+                ventMat.color = new Color(0.95f, 0.98f, 1.0f, 0.45f);
+                ventRend.sharedMaterial = ventMat;
+            }
             var vMain = ventPs.main;
             vMain.startLifetime = 3.5f;
             vMain.startSpeed = 3.5f;
@@ -344,9 +359,9 @@ namespace DSTU.VTVL.EditorTools
             GameObject flapFwdLeftMesh = GameObject.CreatePrimitive(PrimitiveType.Cube);
             flapFwdLeftMesh.name = "Mesh";
             flapFwdLeftMesh.transform.SetParent(flapFwdLeftPivot.transform, false);
-            flapFwdLeftMesh.transform.localPosition = new Vector3(-1.4f, 0f, 0.35f);
-            flapFwdLeftMesh.transform.localScale = new Vector3(2.8f, 3.2f, 0.22f);
-            flapFwdLeftMesh.GetComponent<Renderer>().sharedMaterial = steelBodyMat;
+            flapFwdLeftMesh.transform.localPosition = new Vector3(-0.4f, 0f, 0.1f);
+            flapFwdLeftMesh.transform.localScale = new Vector3(0.8f, 1.4f, 0.12f);
+            flapFwdLeftMesh.GetComponent<Renderer>().sharedMaterial = heatShieldTpsMat;
 
             GameObject flapFwdRightPivot = new GameObject("Flap_Forward_Right_Pivot");
             flapFwdRightPivot.transform.SetParent(rocketRoot.transform, false);
@@ -354,9 +369,9 @@ namespace DSTU.VTVL.EditorTools
             GameObject flapFwdRightMesh = GameObject.CreatePrimitive(PrimitiveType.Cube);
             flapFwdRightMesh.name = "Mesh";
             flapFwdRightMesh.transform.SetParent(flapFwdRightPivot.transform, false);
-            flapFwdRightMesh.transform.localPosition = new Vector3(1.4f, 0f, 0.35f);
-            flapFwdRightMesh.transform.localScale = new Vector3(2.8f, 3.2f, 0.22f);
-            flapFwdRightMesh.GetComponent<Renderer>().sharedMaterial = steelBodyMat;
+            flapFwdRightMesh.transform.localPosition = new Vector3(0.4f, 0f, 0.1f);
+            flapFwdRightMesh.transform.localScale = new Vector3(0.8f, 1.4f, 0.12f);
+            flapFwdRightMesh.GetComponent<Renderer>().sharedMaterial = heatShieldTpsMat;
 
             // Кормовые закрылки (Aft Delta Flaps) с черной термозащитой
             GameObject flapAftLeftPivot = new GameObject("Flap_Aft_Left_Pivot");
@@ -584,19 +599,65 @@ namespace DSTU.VTVL.EditorTools
             follow.PadAPosition = new Vector3(0f, 8f, -95f);
             follow.BargeBPosition = new Vector3(bargeX, 10f, 85f);
 
-            // HUD Телеметрии
-            GameObject hudObj = new GameObject("SimulatorHUD");
-            SimulatorHUD hud = hudObj.AddComponent<SimulatorHUD>();
-            hud.PhysicsBridge = bridge;
+            // =========================================================
+            // 11. ИНТЕГРАЦИЯ ГРАФИЧЕСКОГО ХУДА (ИТ-2 / ИТ-4)
+            // =========================================================
+            string hudPrefabPath = "Assets/Prefabs/HUD_Canvas.prefab";
+            GameObject hudPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(hudPrefabPath);
+            if (hudPrefab != null)
+            {
+                GameObject instantiatedHUD = (GameObject)PrefabUtility.InstantiatePrefab(hudPrefab, scene);
+                if (instantiatedHUD == null)
+                {
+                    instantiatedHUD = UnityEngine.Object.Instantiate(hudPrefab);
+                    SceneManager.MoveGameObjectToScene(instantiatedHUD, scene);
+                }
+                instantiatedHUD.name = "HUD_Canvas";
+                var teleBridge = instantiatedHUD.GetComponent<DSTU.VTVL.HUD.HUDTelemetryBridge>();
+                if (teleBridge == null)
+                    teleBridge = instantiatedHUD.AddComponent<DSTU.VTVL.HUD.HUDTelemetryBridge>();
+                teleBridge.PhysicsBridge = bridge;
+                teleBridge.FindComponents();
+
+                var layoutMgr = instantiatedHUD.GetComponent<DSTU.VTVL.HUD.HUDLayoutManager>();
+                if (layoutMgr == null)
+                    layoutMgr = instantiatedHUD.AddComponent<DSTU.VTVL.HUD.HUDLayoutManager>();
+                layoutMgr.FindPanelReferences();
+                layoutMgr.DisableOpaqueBackground();
+                layoutMgr.HideFloatingMarkers();
+                layoutMgr.ApplyAestheticStyling();
+                layoutMgr.ApplyCornerLayout();
+                layoutMgr.SetupScaleWidget();
+                layoutMgr.SetupLaunchButton();
+                layoutMgr.DisableAllButtonNavigation();
+                layoutMgr.ApplyScale(0.70f);
+            }
+            else
+            {
+                Debug.LogError("Не удалось загрузить HUD префаб: " + hudPrefabPath);
+            }
+
+            // Гарантируем наличие EventSystem для обработки кликов по кнопкам UI (Close, Pause, Масштаб)
+            GameObject eventSystemObj = GameObject.Find("EventSystem");
+            if (eventSystemObj == null)
+            {
+                eventSystemObj = new GameObject("EventSystem");
+                SceneManager.MoveGameObjectToScene(eventSystemObj, scene);
+                eventSystemObj.AddComponent<UnityEngine.EventSystems.EventSystem>();
+                eventSystemObj.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
+            }
+
+
 
             // =========================================================
-            // 11. СОХРАНЕНИЕ СЦЕНЫ
+            // 12. СОХРАНЕНИЕ СЦЕНЫ
             // =========================================================
             string scenePath = "Assets/Scenes/VTVL_MainFlight.unity";
             EditorSceneManager.SaveScene(scene, scenePath);
             EditorBuildSettings.scenes = new EditorBuildSettingsScene[]
             {
-                new EditorBuildSettingsScene(scenePath, true)
+                new EditorBuildSettingsScene(scenePath, true),
+                new EditorBuildSettingsScene("Assets/Scenes/HUD_SampleScene.unity", true)
             };
 
             Debug.Log($"<color=lime>✅ Кинематографическая 3D-сцена VTVL-Orbital собрана: {scenePath}</color>");

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VTVL_MainFlight.unity
     guid: d9f15dd69b8924da3a1cf65b67587d32
+  - enabled: 1
+    path: Assets/Scenes/HUD_SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}

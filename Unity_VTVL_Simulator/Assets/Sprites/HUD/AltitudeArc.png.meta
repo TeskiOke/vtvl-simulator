@@ -1,0 +1,938 @@
+fileFormatVersion: 2
+guid: 2241a92e596e50441a01c08c5f434531
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4546085679303928951
+    second: AltitudeArc_0
+  - first:
+      213: -5795115851111084015
+    second: AltitudeArc_1
+  - first:
+      213: -7306171779641961038
+    second: AltitudeArc_2
+  - first:
+      213: -404679098037457246
+    second: AltitudeArc_3
+  - first:
+      213: -5525465421758780022
+    second: AltitudeArc_4
+  - first:
+      213: -8957872520896145676
+    second: AltitudeArc_5
+  - first:
+      213: 3395333780112704187
+    second: AltitudeArc_6
+  - first:
+      213: -5934035379494412599
+    second: AltitudeArc_7
+  - first:
+      213: -7348854405350456091
+    second: AltitudeArc_8
+  - first:
+      213: 3299326152450990061
+    second: AltitudeArc_9
+  - first:
+      213: 3327901934847006336
+    second: AltitudeArc_10
+  - first:
+      213: 1508909687578421150
+    second: AltitudeArc_11
+  - first:
+      213: 6309562828804707074
+    second: AltitudeArc_12
+  - first:
+      213: -7537361929956908925
+    second: AltitudeArc_13
+  - first:
+      213: -7998880438170554938
+    second: AltitudeArc_14
+  - first:
+      213: -7812828591085971292
+    second: AltitudeArc_15
+  - first:
+      213: -1818549903546694116
+    second: AltitudeArc_16
+  - first:
+      213: -5999123082238746479
+    second: AltitudeArc_17
+  - first:
+      213: 4983248747351374073
+    second: AltitudeArc_18
+  - first:
+      213: 4916836335873853922
+    second: AltitudeArc_19
+  - first:
+      213: -6958999229987935573
+    second: AltitudeArc_20
+  - first:
+      213: 8020285910760733006
+    second: AltitudeArc_21
+  - first:
+      213: -8550797880020252535
+    second: AltitudeArc_22
+  - first:
+      213: 7378895553612953890
+    second: AltitudeArc_23
+  - first:
+      213: 6712844079986579554
+    second: AltitudeArc_24
+  - first:
+      213: 6917823710605133004
+    second: AltitudeArc_25
+  - first:
+      213: -7746139414786064675
+    second: AltitudeArc_26
+  - first:
+      213: 5732490466342830446
+    second: AltitudeArc_27
+  - first:
+      213: -3599581408024806191
+    second: AltitudeArc_28
+  - first:
+      213: 4562250422263341556
+    second: AltitudeArc_29
+  - first:
+      213: 6777988910023981040
+    second: AltitudeArc_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AltitudeArc_0
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 778
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ca661d6d0f61f30800000000000000
+      internalID: 4546085679303928951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 741
+        width: 84
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110d94656dc939fa0800000000000000
+      internalID: -5795115851111084015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_2
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 776
+        width: 82
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b51576e9734b9a90800000000000000
+      internalID: -7306171779641961038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_3
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 776
+        width: 82
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aea371218a426af0800000000000000
+      internalID: -404679098037457246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_4
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 742
+        width: 83
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d2d5d597a9153b0800000000000000
+      internalID: -5525465421758780022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_5
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 778
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f690c0376e3fa380800000000000000
+      internalID: -8957872520896145676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_6
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 671
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb280817516ae1f20800000000000000
+      internalID: 3395333780112704187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_7
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 599
+        width: 68
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce92a0234216ada0800000000000000
+      internalID: -5934035379494412599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_8
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 678
+        width: 84
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4850faadf930a90800000000000000
+      internalID: -7348854405350456091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_9
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 678
+        width: 85
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def5ff2b7af89cd20800000000000000
+      internalID: 3299326152450990061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_10
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 598
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08614e18d251f2e20800000000000000
+      internalID: 3327901934847006336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_11
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 671
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e97e146cd59b0f410800000000000000
+      internalID: 1508909687578421150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_12
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 519
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 203d9ea96f1109750800000000000000
+      internalID: 6309562828804707074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 507
+        width: 52
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 380ad556249e56790800000000000000
+      internalID: -7537361929956908925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_14
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 507
+        width: 51
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cde5021f944ef090800000000000000
+      internalID: -7998880438170554938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_15
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 519
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a81e416ac1439390800000000000000
+      internalID: -7812828591085971292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 406
+        width: 36
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1647c07f7633c6e0800000000000000
+      internalID: -1818549903546694116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_17
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 406
+        width: 37
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19020576755debca0800000000000000
+      internalID: -5999123082238746479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_18
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 350
+        width: 35
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8f945555e082540800000000000000
+      internalID: 4983248747351374073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 309
+        width: 55
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e98e72d89c1c3440800000000000000
+      internalID: 4916836335873853922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_20
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 309
+        width: 55
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa2a58121bac6f90800000000000000
+      internalID: -6958999229987935573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_21
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 350
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49b6f3ea87cd4f60800000000000000
+      internalID: 8020285910760733006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_22
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 225
+        width: 69
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 988ca37d1a6755980800000000000000
+      internalID: -8550797880020252535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_23
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 200
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2293fc3396a176660800000000000000
+      internalID: 7378895553612953890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_24
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 157
+        width: 82
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2681f24ef10d82d50800000000000000
+      internalID: 6712844079986579554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_25
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 157
+        width: 82
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4c469330c010060800000000000000
+      internalID: 6917823710605133004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_26
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 225
+        width: 69
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde36093e3f208490800000000000000
+      internalID: -7746139414786064675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_27
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 200
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e618da405b5ed8f40800000000000000
+      internalID: 5732490466342830446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_28
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 110
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dcb492e7c7bb0ec0800000000000000
+      internalID: -3599581408024806191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_29
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 110
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1e163569e505f30800000000000000
+      internalID: 4562250422263341556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltitudeArc_30
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 70
+        width: 15
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f734899001401e50800000000000000
+      internalID: 6777988910023981040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AltitudeArc_0: 4546085679303928951
+      AltitudeArc_1: -5795115851111084015
+      AltitudeArc_10: 3327901934847006336
+      AltitudeArc_11: 1508909687578421150
+      AltitudeArc_12: 6309562828804707074
+      AltitudeArc_13: -7537361929956908925
+      AltitudeArc_14: -7998880438170554938
+      AltitudeArc_15: -7812828591085971292
+      AltitudeArc_16: -1818549903546694116
+      AltitudeArc_17: -5999123082238746479
+      AltitudeArc_18: 4983248747351374073
+      AltitudeArc_19: 4916836335873853922
+      AltitudeArc_2: -7306171779641961038
+      AltitudeArc_20: -6958999229987935573
+      AltitudeArc_21: 8020285910760733006
+      AltitudeArc_22: -8550797880020252535
+      AltitudeArc_23: 7378895553612953890
+      AltitudeArc_24: 6712844079986579554
+      AltitudeArc_25: 6917823710605133004
+      AltitudeArc_26: -7746139414786064675
+      AltitudeArc_27: 5732490466342830446
+      AltitudeArc_28: -3599581408024806191
+      AltitudeArc_29: 4562250422263341556
+      AltitudeArc_3: -404679098037457246
+      AltitudeArc_30: 6777988910023981040
+      AltitudeArc_4: -5525465421758780022
+      AltitudeArc_5: -8957872520896145676
+      AltitudeArc_6: 3395333780112704187
+      AltitudeArc_7: -5934035379494412599
+      AltitudeArc_8: -7348854405350456091
+      AltitudeArc_9: 3299326152450990061
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
