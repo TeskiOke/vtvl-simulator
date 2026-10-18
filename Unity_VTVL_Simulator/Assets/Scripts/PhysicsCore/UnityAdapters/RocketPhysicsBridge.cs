@@ -31,8 +31,8 @@ namespace DSTU.VTVL.UnityAdapters
         [Range(0.001f, 0.05f)]
         public float SimulationFixedDt = 0.01f;
 
-        [Tooltip("Множитель ускорения времени (Time Warp)")]
-        [Range(1, 10)]
+        [Tooltip("Множитель ускорения времени (Time Warp: 1x, 10x, 25x)")]
+        [Range(1, 25)]
         public int TimeWarp = 1;
 
         [Header("Режим управления")]
@@ -181,9 +181,19 @@ namespace DSTU.VTVL.UnityAdapters
                 ToggleSimulation();
             }
 
-            // Ускорение времени [ и ]
-            if (Input.GetKeyDown(KeyCode.LeftBracket)) TimeWarp = Mathf.Max(1, TimeWarp / 2);
-            if (Input.GetKeyDown(KeyCode.RightBracket)) TimeWarp = Mathf.Min(10, TimeWarp == 1 ? 2 : (TimeWarp == 2 ? 5 : 10));
+            // Ускорение времени [ и ] (1x -> 10x -> 25x)
+            if (Input.GetKeyDown(KeyCode.LeftBracket))
+            {
+                if (TimeWarp >= 25) TimeWarp = 10;
+                else if (TimeWarp >= 10) TimeWarp = 1;
+                else TimeWarp = 1;
+            }
+            if (Input.GetKeyDown(KeyCode.RightBracket))
+            {
+                if (TimeWarp <= 1) TimeWarp = 10;
+                else if (TimeWarp <= 10) TimeWarp = 25;
+                else TimeWarp = 25;
+            }
         }
 
         /// <summary>
@@ -439,20 +449,24 @@ namespace DSTU.VTVL.UnityAdapters
             double pitchError = Math.Abs(State.PitchDegrees - 90.0);
             double distToBarge = Math.Abs(State.PosX - RocketParameters.PadB_X);
 
-            if (vy <= RocketParameters.TargetTouchdownVy && vx <= 0.8 && pitchError <= 7.0 && distToBarge <= 150.0)
+            // Оценка контакта амортизаторов через LandingGearContact (Кельвин-Фойгт, ИСС-4)
+            var contact = LandingGearContact.Evaluate(State.PosY, State.VelY, vx, pitchError, State.Mass);
+            State.LegStroke = contact.Stroke;
+
+            if (contact.IsLanded && distToBarge <= 150.0)
             {
                 State.IsLanded = true;
-                Debug.Log($"<color=lime>[ПОСАДКА УСПЕШНА] Мягкая посадка на баржу B (Touchdown: PASS)! Vy={vy:F2} м/с, Vx={vx:F2} м/с, Тангаж={pitchError:F1}°, Отклонение={distToBarge:F1} м, Остаток топлива={State.Fuel:F0} кг.</color>");
+                Debug.Log($"<color=lime>[ПОСАДКА УСПЕШНА] {contact.Message} (Touchdown: PASS)! Vy={vy:F2} м/с, Vx={vx:F2} м/с, Тангаж={pitchError:F1}°, Отклонение={distToBarge:F1} м, Топливо={State.Fuel:F0} кг.</color>");
             }
             else if (vy <= RocketParameters.MaxTouchdownVy && pitchError <= 12.0)
             {
                 State.IsLanded = true;
-                Debug.LogWarning($"<color=yellow>[ПОСАДКА С ДОПУСКАМИ] Ступень уцелела на барже. Vy={vy:F2} м/с, Vx={vx:F2} м/с, Тангаж={pitchError:F1}°, Отклонение={distToBarge:F1} м, Топливо={State.Fuel:F0} кг.</color>");
+                Debug.LogWarning($"<color=yellow>[ПОСАДКА С ДОПУСКАМИ] Ступень уцелела на барже ({contact.OutcomeCategory}). Vy={vy:F2} м/с, Vx={vx:F2} м/с, Тангаж={pitchError:F1}°, Отклонение={distToBarge:F1} м, Топливо={State.Fuel:F0} кг.</color>");
             }
             else
             {
                 State.IsCrashed = true;
-                State.CrashReason = $"Крушение при ударе о палубу: Vy={vy:F2} м/с (лимит {RocketParameters.MaxTouchdownVy:F1} м/с), Vx={vx:F2} м/с, Наклон={pitchError:F1}°.";
+                State.CrashReason = contact.IsCrashed ? contact.Message : $"Крушение при ударе о палубу: Vy={vy:F2} м/с (лимит {RocketParameters.MaxTouchdownVy:F1} м/с), Vx={vx:F2} м/с, Наклон={pitchError:F1}°.";
                 Debug.LogError($"<color=red>[КРУШЕНИЕ] {State.CrashReason}</color>");
             }
         }

@@ -629,6 +629,7 @@ namespace DSTU.VTVL.EditorTools
                 layoutMgr.ApplyCornerLayout();
                 layoutMgr.SetupScaleWidget();
                 layoutMgr.SetupLaunchButton();
+                layoutMgr.SetupTimeWarpWidget();
                 layoutMgr.DisableAllButtonNavigation();
                 layoutMgr.ApplyScale(0.70f);
             }

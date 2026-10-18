@@ -39,6 +39,18 @@ namespace DSTU.VTVL.PhysicsCore
             s.DynamicPressure = d.DynamicPressure;
             s.ThrustForce = d.ThrustForce;
             s.DragForce = d.DragForce;
+            s.LiftForce = d.LiftForce;
+            s.LiftForceX = d.LiftForceX;
+            s.LiftForceY = d.LiftForceY;
+            s.LiftForceZ = d.LiftForceZ;
+            s.AngleOfAttackDeg = d.AngleOfAttackDeg;
+            s.HeatFlux = d.HeatFlux;
+            s.SkinTemperature = d.SkinTemperature;
+            s.CoriolisAccelX = d.CoriolisAccelX;
+            s.CoriolisAccelY = d.CoriolisAccelY;
+            s.CoriolisAccelZ = d.CoriolisAccelZ;
+            s.GravityJ2_Radial = d.GravityJ2Radial;
+            s.GravityJ2_Polar = d.GravityJ2Polar;
             s.Throttle = throttle;
 
             if (s.PosY > 2.0)

@@ -91,9 +91,90 @@ namespace DSTU.VTVL.PhysicsCore
 
             double totalDragForce = outQ * effectiveArea * effectiveCd;
 
-            // Вектор силы направлен строго противоположно вектору скорости
+            // Вектор силы сопротивления направлен строго противоположно вектору скорости
             fDragX = -totalDragForce * (vx / v);
             fDragY = -totalDragForce * (vy / v);
+        }
+
+        // -------------------------------------------------------------
+        // Аэродинамический нагрев обшивки TPS (ИСС-4, Саттон-Грейвс)
+        // -------------------------------------------------------------
+        /// <summary>Константа Саттона-Грейвса для воздушной среды Земли (Вт/(м²·(кг/м³)^0.5·(м/с)³))</summary>
+        public const double SuttonGravesK = 1.7415e-4;
+
+        /// <summary>Постоянная Стефана-Больцмана sigma (Вт/(м²·К⁴))</summary>
+        public const double StefanBoltzmannSigma = 5.670374e-8;
+
+        /// <summary>Степень черноты плитки теплозащиты TPS epsilon</summary>
+        public const double TpsEmissivity = 0.85;
+
+        /// <summary>
+        /// Расчёт конвективного теплового потока Саттона-Грейвса и равновесной температуры обшивки TPS.
+        /// q_conv = k_SG * sqrt(rho / Rn) * V³
+        /// T_skin = ((q_conv / (eps * sigma)) + T_atm⁴)^0.25 - 273.15
+        /// </summary>
+        /// <param name="density">Локальная плотность воздуха (кг/м³)</param>
+        /// <param name="velocity">Полная скорость полета аппарата (м/с)</param>
+        /// <param name="noseRadius">Эффективный радиус затупления носовой части (м)</param>
+        /// <param name="ambientTempKelvin">Температура окружающего воздуха (К)</param>
+        /// <param name="heatFluxWatts">Выходной тепловой поток (Вт/м²)</param>
+        /// <param name="skinTempCelsius">Выходная температура поверхности плитки (°C)</param>
+        public static void ComputeAeroHeating(
+            double density, double velocity, double noseRadius, double ambientTempKelvin,
+            out double heatFluxWatts, out double skinTempCelsius)
+        {
+            if (velocity < 10.0 || density < 1e-12 || noseRadius <= 0.0)
+            {
+                heatFluxWatts = 0.0;
+                skinTempCelsius = Math.Max(-273.15, ambientTempKelvin - 273.15);
+                return;
+            }
+
+            // Конвективный тепловой поток Саттона-Грейвса
+            heatFluxWatts = SuttonGravesK * Math.Sqrt(density / noseRadius) * (velocity * velocity * velocity);
+
+            // Равновесная температура излучения по закону Стефана-Больцмана
+            double radTerm = heatFluxWatts / (TpsEmissivity * StefanBoltzmannSigma);
+            double ambientPow4 = Math.Pow(Math.Max(1.0, ambientTempKelvin), 4.0);
+            double tEquilibriumKelvin = Math.Pow(radTerm + ambientPow4, 0.25);
+
+            skinTempCelsius = tEquilibriumKelvin - 273.15;
+        }
+
+        // -------------------------------------------------------------
+        // Аэродинамика режима Belly-Flop и бокового маневра Cross-Range (ИСС-3)
+        // -------------------------------------------------------------
+        /// <summary>
+        /// Расчет полной аэродинамики спуска в режиме Belly-Flop: лобовое сопротивление и боковая подъемная сила.
+        /// </summary>
+        /// <param name="q">Скоростной напор (Па)</param>
+        /// <param name="alphaDeg">Угол атаки (град, 60° для Belly-Flop)</param>
+        /// <param name="bankAngleRad">Угол крена для бокового маневра (радианы)</param>
+        /// <param name="bellyArea">Площадь проекции фюзеляжа плашмя (м²)</param>
+        /// <param name="dragForce">Сила лобового сопротивления (Н)</param>
+        /// <param name="liftVertical">Вертикальная составляющая подъемной силы (Н)</param>
+        /// <param name="liftLateral">Боковая составляющая подъемной силы для Cross-Range (Н)</param>
+        public static void ComputeBellyFlopAero(
+            double q, double alphaDeg, double bankAngleRad, double bellyArea,
+            out double dragForce, out double liftVertical, out double liftLateral)
+        {
+            // По датасету ИСС-3: при alpha=60°: Cd ~ 1.35, Cl ~ 0.75
+            // При сбалансированном угле планирования alpha=42°: Cd ~ 0.88, Cl ~ 0.75 (L/D = 0.85)
+            double cd = 1.35;
+            double cl = 0.75;
+
+            if (alphaDeg <= 45.0)
+            {
+                cd = 0.8824;
+                cl = 0.75;
+            }
+
+            dragForce = q * bellyArea * cd;
+            double totalLift = q * bellyArea * cl;
+
+            // Разложение подъемной силы вектором крена
+            liftVertical = totalLift * Math.Cos(bankAngleRad);
+            liftLateral = totalLift * Math.Sin(bankAngleRad);
         }
     }
 }

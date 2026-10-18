@@ -100,6 +100,37 @@ namespace DSTU.VTVL.PhysicsCore
         /// <summary>Текущая сила аэродинамического сопротивления (Н)</summary>
         public double DragForce;
 
+        /// <summary>Текущая подъемная сила аэродинамики (Н)</summary>
+        public double LiftForce;
+        public double LiftForceX;
+        public double LiftForceY;
+        public double LiftForceZ;
+
+        /// <summary>Текущий угол атаки корпуса (градусы)</summary>
+        public double AngleOfAttackDeg;
+
+        /// <summary>Конвективный тепловой поток Саттона-Грейвса q_conv (Вт/м²)</summary>
+        public double HeatFlux;
+
+        /// <summary>Равновесная температура обшивки плитки TPS (°C)</summary>
+        public double SkinTemperature;
+
+        /// <summary>Кориолисово ускорение по осям (м/с²)</summary>
+        public double CoriolisAccelX;
+        public double CoriolisAccelY;
+        public double CoriolisAccelZ;
+
+        /// <summary>Центробежное ускорение вращения Земли (м/с²)</summary>
+        public double CentrifugalAccelY;
+        public double CentrifugalAccelZ;
+
+        /// <summary>Гравитационное ускорение возмущения J2 геоида (м/с²)</summary>
+        public double GravityJ2_Radial;
+        public double GravityJ2_Polar;
+
+        /// <summary>Величина сжатия штока посадочных амортизаторов (м)</summary>
+        public double LegStroke;
+
         /// <summary>Флаг: оторвалась ли ракета от стартового стола</summary>
         public bool HasLiftoff;
 
@@ -163,6 +194,21 @@ namespace DSTU.VTVL.PhysicsCore
             DynamicPressure = 0.0;
             ThrustForce = 0.0;
             DragForce = 0.0;
+            LiftForce = 0.0;
+            LiftForceX = 0.0;
+            LiftForceY = 0.0;
+            LiftForceZ = 0.0;
+            AngleOfAttackDeg = 0.0;
+            HeatFlux = 0.0;
+            SkinTemperature = 15.0; // 288.15 K = 15°C на уровне моря
+            CoriolisAccelX = 0.0;
+            CoriolisAccelY = 0.0;
+            CoriolisAccelZ = 0.0;
+            CentrifugalAccelY = 0.0;
+            CentrifugalAccelZ = 0.0;
+            GravityJ2_Radial = 0.0;
+            GravityJ2_Polar = 0.0;
+            LegStroke = 0.0;
 
             HasLiftoff = false;
             IsLanded = false;

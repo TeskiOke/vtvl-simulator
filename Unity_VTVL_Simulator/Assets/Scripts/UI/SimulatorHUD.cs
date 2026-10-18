@@ -92,7 +92,8 @@ namespace DSTU.VTVL.UnityAdapters
                 ShowHUD = false;
             }
 
-            GUI.Label(new Rect(20, 14, 450, 28), $"ФАЗА: {s.FlightPhase.ToUpper()}", _phaseStyle);
+            string warpTag = PhysicsBridge.TimeWarp > 1 ? $"  ⚡ [{PhysicsBridge.TimeWarp}x]" : "";
+            GUI.Label(new Rect(20, 14, 450, 28), $"ФАЗА: {s.FlightPhase.ToUpper()}{warpTag}", _phaseStyle);
 
             string statusSub = s.IsLanded
                 ? "🏆 УСПЕШНАЯ ПОСАДКА НА БАРЖУ B! (Touchdown: PASS)"
@@ -192,21 +193,29 @@ namespace DSTU.VTVL.UnityAdapters
                 }
                 btnY += 36;
 
-                // Кнопки TimeWarp
-                GUI.Label(new Rect(ctrlX + 10, btnY, 240, 20), $"Ускорение времени: x{PhysicsBridge.TimeWarp}", _telemetryStyle);
+                // Кнопки TimeWarp (Ускорение полёта 1x, 10x, 25x)
+                GUI.Label(new Rect(ctrlX + 10, btnY, 240, 20), $"Ускорение полёта: {PhysicsBridge.TimeWarp}x", _telemetryStyle);
                 btnY += 22;
 
-                int twW = 55;
-                if (GUI.Button(new Rect(ctrlX + 10, btnY, twW, 25), "x1")) PhysicsBridge.TimeWarp = 1;
-                if (GUI.Button(new Rect(ctrlX + 70, btnY, twW, 25), "x2")) PhysicsBridge.TimeWarp = 2;
-                if (GUI.Button(new Rect(ctrlX + 130, btnY, twW, 25), "x5")) PhysicsBridge.TimeWarp = 5;
-                if (GUI.Button(new Rect(ctrlX + 190, btnY, twW, 25), "x10")) PhysicsBridge.TimeWarp = 10;
+                int twW = 76;
+                Color prevBg = GUI.backgroundColor;
+
+                GUI.backgroundColor = PhysicsBridge.TimeWarp == 1 ? new Color(0.2f, 0.85f, 0.35f, 1f) : new Color(0.3f, 0.35f, 0.4f, 0.85f);
+                if (GUI.Button(new Rect(ctrlX + 10, btnY, twW, 26), "1x")) PhysicsBridge.TimeWarp = 1;
+
+                GUI.backgroundColor = PhysicsBridge.TimeWarp == 10 ? new Color(0.2f, 0.85f, 0.35f, 1f) : new Color(0.3f, 0.35f, 0.4f, 0.85f);
+                if (GUI.Button(new Rect(ctrlX + 92, btnY, twW, 26), "10x")) PhysicsBridge.TimeWarp = 10;
+
+                GUI.backgroundColor = PhysicsBridge.TimeWarp == 25 ? new Color(0.2f, 0.85f, 0.35f, 1f) : new Color(0.3f, 0.35f, 0.4f, 0.85f);
+                if (GUI.Button(new Rect(ctrlX + 174, btnY, twW, 26), "25x")) PhysicsBridge.TimeWarp = 25;
+
+                GUI.backgroundColor = prevBg;
             }
 
             // =========================================================
             // 4. ПАНЕЛЬ ПОДСКАЗОК ПО КЛАВИШАМ (СВОРАЧИВАЕМАЯ СНИЗУ СПРАВА)
             // =========================================================
-            int keyHeight = FoldKeybinds ? 35 : 240;
+            int keyHeight = FoldKeybinds ? 35 : 258;
             int keyY = Screen.height - keyHeight - 10;
             GUI.Box(new Rect(ctrlX, keyY, ctrlWidth, keyHeight), "", _boxStyle);
 
@@ -222,6 +231,7 @@ namespace DSTU.VTVL.UnityAdapters
                 int kstep = 18;
                 DrawKeyRow("G", "Отчёт полёта и графики", ref ky, kstep, ctrlX);
                 DrawKeyRow("Tab", "Автопилот / Ручной", ref ky, kstep, ctrlX);
+                DrawKeyRow("[ / ]", "Ускорение (1x / 10x / 25x)", ref ky, kstep, ctrlX);
                 DrawKeyRow("W / S", "Тяга (газ больше / меньше)", ref ky, kstep, ctrlX);
                 DrawKeyRow("A / D", "Тангаж / Сопло TVC влево-вправо", ref ky, kstep, ctrlX);
                 DrawKeyRow("Space / X", "Полный газ 100% / Отсечка 0%", ref ky, kstep, ctrlX);

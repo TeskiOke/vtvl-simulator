@@ -14,6 +14,8 @@ Unity_VTVL_Simulator/mono_crash*
 .vs/
 .idea/
 *.csproj
+!PhysicsCore_CSharp/PhysicsCore.csproj
+!Tests/*.csproj
 *.unityproj
 *.sln
 *.suo
@@ -25,6 +27,8 @@ Unity_VTVL_Simulator/mono_crash*
 *.pdb
 *.opendb
 *.VC.db
+[Bb]in/
+[Oo]bj/
 
 # OS Generated
 .DS_Store

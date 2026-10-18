@@ -90,12 +90,12 @@ namespace DSTU.VTVL.Guidance
         public static double ComputeSteeringTilt(double currentX, double targetPadX, double currentVx)
         {
             double dx = targetPadX - currentX;
-            // Целевая горизонтальная скорость сближения: пропорционально смещению, макс ±10 м/с
-            double targetVx = Math.Max(-10.0, Math.Min(10.0, dx * 0.08));
+            // Целевая горизонтальная скорость сближения: пропорционально смещению, макс ±15 м/с
+            double targetVx = Math.Max(-15.0, Math.Min(15.0, dx * 0.10));
             double errVx = targetVx - currentVx;
 
-            // Ограничение отклонения вектора тяги не более ±3 градусов (±0.052 радиан)
-            return Math.Max(-0.052, Math.Min(0.052, -errVx * 0.02));
+            // Ограничение отклонения вектора тяги не более ±5 градусов (±0.087 радиан)
+            return Math.Max(-0.087, Math.Min(0.087, -errVx * 0.035));
         }
     }
 }

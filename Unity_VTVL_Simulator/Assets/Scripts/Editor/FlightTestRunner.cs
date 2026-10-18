@@ -49,7 +49,7 @@ namespace DSTU.VTVL.EditorTools
                     if (curSec % 30 == 0 && curSec != lastLoggedSec)
                     {
                         lastLoggedSec = curSec;
-                        Debug.Log($"[T+{curSec:D3}s] Фаза={state.FlightPhase,-20} | H={state.PosY / 1000.0,6:F2} км | X={state.PosX / 1000.0,5:F2} км | Vy={state.VelY,7:F1} м/с | Vx={state.VelX,6:F1} м/с | Сопло={state.GimbalAngleDegrees,5:F1}° | Топливо={state.Fuel,5:F0} кг");
+                        Debug.Log($"[T+{curSec:D3}s] Фаза={state.FlightPhase,-22} | H={state.PosY / 1000.0,6:F2} км | X={state.PosX / 1000.0,5:F2} км | Vy={state.VelY,7:F1} м/с | q_тепл={state.HeatFlux / 1000.0,5:F1} кВт | T_обш={state.SkinTemperature,4:F0}°C | Сопло={state.GimbalAngleDegrees,5:F1}° | Топливо={state.Fuel,5:F0} кг");
                     }
                 }
 
@@ -61,7 +61,7 @@ namespace DSTU.VTVL.EditorTools
             }
 
             Debug.Log($"<color=lime>✅ ТЕСТ ЗАВЕРШЕН: {logger.MissionResult}</color>");
-            Debug.Log($"📊 Итоги полёта: Время = {logger.FlightDuration:F1} с | H_max = {logger.MaxAltitudeKm:F2} км | V_max = {logger.MaxSpeedMs:F1} м/с | Vy_touchdown = {logger.TouchdownVy:F2} м/с | Ошибка баржи = {logger.BargeDistanceError:F1} м | Топлива сожжено = {logger.FuelBurned:F0} кг");
+            Debug.Log($"📊 Итоги полёта: Время = {logger.FlightDuration:F1} с | H_max = {logger.MaxAltitudeKm:F2} км | V_max = {logger.MaxSpeedMs:F1} м/с | Q_тепл_max = {logger.MaxHeatFluxKW:F1} кВт/м² | T_обш_max = {logger.MaxSkinTempC:F0} °C | Сжатие опор = {state.LegStroke * 100.0:F1} см | Vy_touchdown = {logger.TouchdownVy:F2} м/с | Ошибка баржи = {logger.BargeDistanceError:F1} м | Топлива сожжено = {logger.FuelBurned:F0} кг");
             Debug.Log($"📈 Записано посекундных срезов: {logger.SecondBySecondLog.Count}");
 
             GameObject.DestroyImmediate(runnerObj);

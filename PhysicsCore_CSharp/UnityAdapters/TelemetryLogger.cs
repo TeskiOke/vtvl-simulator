@@ -28,6 +28,9 @@ namespace DSTU.VTVL.UnityAdapters
         public float GForce;
         public float Mach;
         public float DynamicPressureKPa;
+        public float HeatFluxKW;
+        public float SkinTempC;
+        public float LiftForceKN;
         public string Phase;
     }
 
@@ -52,6 +55,9 @@ namespace DSTU.VTVL.UnityAdapters
         public float MaxSpeedMs = 0f;
         public float MaxGForce = 0f;
         public float MaxMach = 0f;
+        public float MaxHeatFluxKW = 0f;
+        public float MaxSkinTempC = 0f;
+        public float MaxLiftForceKN = 0f;
         public float TouchdownVy = 0f;
         public float TouchdownVx = 0f;
         public float BargeDistanceError = 0f;
@@ -112,6 +118,9 @@ namespace DSTU.VTVL.UnityAdapters
             MaxSpeedMs = 0f;
             MaxGForce = 0f;
             MaxMach = 0f;
+            MaxHeatFluxKW = 0f;
+            MaxSkinTempC = 0f;
+            MaxLiftForceKN = 0f;
             TouchdownVy = 0f;
             TouchdownVx = 0f;
             BargeDistanceError = 0f;
@@ -133,11 +142,17 @@ namespace DSTU.VTVL.UnityAdapters
             float curSpeed = (float)s.TotalVelocity;
             float curG = (float)s.GForce;
             float curMach = (float)s.MachNumber;
+            float curHeat = (float)(s.HeatFlux / 1000.0);
+            float curSkin = (float)s.SkinTemperature;
+            float curLift = (float)(s.LiftForce / 1000.0);
 
             if (curAltKm > MaxAltitudeKm) MaxAltitudeKm = curAltKm;
             if (curSpeed > MaxSpeedMs) MaxSpeedMs = curSpeed;
             if (curG > MaxGForce) MaxGForce = curG;
             if (curMach > MaxMach) MaxMach = curMach;
+            if (curHeat > MaxHeatFluxKW) MaxHeatFluxKW = curHeat;
+            if (curSkin > MaxSkinTempC) MaxSkinTempC = curSkin;
+            if (curLift > MaxLiftForceKN) MaxLiftForceKN = curLift;
 
             // Посекундная фиксация (каждую целую секунду)
             float t = (float)s.Time;
@@ -186,11 +201,17 @@ namespace DSTU.VTVL.UnityAdapters
             float curSpeed = (float)s.TotalVelocity;
             float curG = (float)s.GForce;
             float curMach = (float)s.MachNumber;
+            float curHeat = (float)(s.HeatFlux / 1000.0);
+            float curSkin = (float)s.SkinTemperature;
+            float curLift = (float)(s.LiftForce / 1000.0);
 
             if (curAltKm > MaxAltitudeKm) MaxAltitudeKm = curAltKm;
             if (curSpeed > MaxSpeedMs) MaxSpeedMs = curSpeed;
             if (curG > MaxGForce) MaxGForce = curG;
             if (curMach > MaxMach) MaxMach = curMach;
+            if (curHeat > MaxHeatFluxKW) MaxHeatFluxKW = curHeat;
+            if (curSkin > MaxSkinTempC) MaxSkinTempC = curSkin;
+            if (curLift > MaxLiftForceKN) MaxLiftForceKN = curLift;
 
             TelemetryRecord rec = new TelemetryRecord
             {
@@ -208,6 +229,9 @@ namespace DSTU.VTVL.UnityAdapters
                 GForce = (float)s.GForce,
                 Mach = (float)s.MachNumber,
                 DynamicPressureKPa = (float)(s.DynamicPressure / 1000.0),
+                HeatFluxKW = curHeat,
+                SkinTempC = curSkin,
+                LiftForceKN = curLift,
                 Phase = s.FlightPhase
             };
 
@@ -228,14 +252,14 @@ namespace DSTU.VTVL.UnityAdapters
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Time_s,Altitude_m,Downrange_m,VelY_ms,VelX_ms,TotalSpeed_ms,Pitch_deg,TVC_Gimbal_deg,Mass_kg,Fuel_kg,Throttle_pct,GForce_g,Mach,DynamicPressure_kPa,Phase");
+                sb.AppendLine("Time_s,Altitude_m,Downrange_m,VelY_ms,VelX_ms,TotalSpeed_ms,Pitch_deg,TVC_Gimbal_deg,Mass_kg,Fuel_kg,Throttle_pct,GForce_g,Mach,DynamicPressure_kPa,HeatFlux_kW_m2,SkinTemp_C,LiftForce_kN,Phase");
 
                 foreach (var r in SecondBySecondLog)
                 {
                     sb.AppendLine(string.Format(
                         System.Globalization.CultureInfo.InvariantCulture,
-                        "{0:F1},{1:F1},{2:F1},{3:F2},{4:F2},{5:F2},{6:F1},{7:F1},{8:F0},{9:F0},{10:F1},{11:F2},{12:F2},{13:F2},\"{14}\"",
-                        r.Time, r.PosY, r.PosX, r.VelY, r.VelX, r.TotalSpeed, r.PitchDeg, r.GimbalDeg, r.Mass, r.Fuel, r.ThrottlePct, r.GForce, r.Mach, r.DynamicPressureKPa, r.Phase
+                        "{0:F1},{1:F1},{2:F1},{3:F2},{4:F2},{5:F2},{6:F1},{7:F1},{8:F0},{9:F0},{10:F1},{11:F2},{12:F2},{13:F2},{14:F1},{15:F1},{16:F1},\"{17}\"",
+                        r.Time, r.PosY, r.PosX, r.VelY, r.VelX, r.TotalSpeed, r.PitchDeg, r.GimbalDeg, r.Mass, r.Fuel, r.ThrottlePct, r.GForce, r.Mach, r.DynamicPressureKPa, r.HeatFluxKW, r.SkinTempC, r.LiftForceKN, r.Phase
                     ));
                 }
 
@@ -294,6 +318,8 @@ namespace DSTU.VTVL.UnityAdapters
                 sb.AppendLine("<div class='grid'>");
                 sb.AppendLine($"<div class='metric'><div>Апогей (макс. высота)</div><div class='metric-val'>{MaxAltitudeKm:F2} км</div></div>");
                 sb.AppendLine($"<div class='metric'><div>Макс. скорость</div><div class='metric-val'>{MaxSpeedMs:F1} м/с (M {MaxMach:F2})</div></div>");
+                sb.AppendLine($"<div class='metric'><div>Тепловой поток (макс)</div><div class='metric-val'>{MaxHeatFluxKW:F1} кВт/м²</div></div>");
+                sb.AppendLine($"<div class='metric'><div>Темп. обшивки TPS (макс)</div><div class='metric-val'>{MaxSkinTempC:F0} °C</div></div>");
                 sb.AppendLine($"<div class='metric'><div>Макс. перегрузка</div><div class='metric-val'>{MaxGForce:F2} G</div></div>");
                 sb.AppendLine($"<div class='metric'><div>Касание Vy / Vx</div><div class='metric-val'>{TouchdownVy:F2} / {TouchdownVx:F2} м/с</div></div>");
                 sb.AppendLine($"<div class='metric'><div>Сожжено топлива</div><div class='metric-val'>{FuelBurned:F0} кг</div></div>");
@@ -316,15 +342,15 @@ namespace DSTU.VTVL.UnityAdapters
                 sb.AppendLine($"<div class='title'>📋 ПОСЕКУНДНЫЙ ЖУРНАЛ ТЕЛЕМЕТРИИ ({SecondBySecondLog.Count} СЕК)</div>");
                 sb.AppendLine("<div style='overflow-x:auto; max-height:450px;'>");
                 sb.AppendLine("<table>");
-                sb.AppendLine("<thead><tr><th>t, с</th><th>Высота, м</th><th>Дальность, м</th><th>Vy, м/с</th><th>Vx, м/с</th><th>V, м/с</th><th>Тангаж, °</th><th>Сопло TVC, °</th><th>Тяга, %</th><th>G-Force</th><th>Масса, кг</th><th>Топливо, кг</th><th>Фаза</th></tr></thead>");
+                sb.AppendLine("<thead><tr><th>t, с</th><th>Высота, м</th><th>Дальность, м</th><th>Vy, м/с</th><th>Vx, м/с</th><th>V, м/с</th><th>Тангаж, °</th><th>Сопло, °</th><th>q_тепл, кВт/м²</th><th>T_обш, °C</th><th>Тяга, %</th><th>G-Force</th><th>Масса, кг</th><th>Топливо, кг</th><th>Фаза</th></tr></thead>");
                 sb.AppendLine("<tbody>");
 
                 foreach (var r in SecondBySecondLog)
                 {
                     sb.AppendLine(string.Format(
                         System.Globalization.CultureInfo.InvariantCulture,
-                        "<tr><td>{0:F0}</td><td>{1:F0}</td><td>{2:F0}</td><td>{3:F1}</td><td>{4:F1}</td><td>{5:F1}</td><td>{6:F1}°</td><td>{7:F1}°</td><td>{8:F0}%</td><td>{9:F2}g</td><td>{10:F0}</td><td>{11:F0}</td><td style='text-align:left;'>{12}</td></tr>",
-                        r.Time, r.PosY, r.PosX, r.VelY, r.VelX, r.TotalSpeed, r.PitchDeg, r.GimbalDeg, r.ThrottlePct, r.GForce, r.Mass, r.Fuel, r.Phase
+                        "<tr><td>{0:F0}</td><td>{1:F0}</td><td>{2:F0}</td><td>{3:F1}</td><td>{4:F1}</td><td>{5:F1}</td><td>{6:F1}°</td><td>{7:F1}°</td><td>{8:F1}</td><td>{9:F0}</td><td>{10:F0}%</td><td>{11:F2}g</td><td>{12:F0}</td><td>{13:F0}</td><td style='text-align:left;'>{14}</td></tr>",
+                        r.Time, r.PosY, r.PosX, r.VelY, r.VelX, r.TotalSpeed, r.PitchDeg, r.GimbalDeg, r.HeatFluxKW, r.SkinTempC, r.ThrottlePct, r.GForce, r.Mass, r.Fuel, r.Phase
                     ));
                 }
 

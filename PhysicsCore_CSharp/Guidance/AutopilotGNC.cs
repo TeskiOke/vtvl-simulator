@@ -88,10 +88,10 @@ namespace DSTU.VTVL.Guidance
                 case FlightStage.Ascent_GravityTurn:
                     cmd.Throttle = 1.0;
 
-                    // Наклон тангажа к посадочной барже B (X = 25 270 м)
-                    // Тангаж плавно снижается от 90.0° до 75.3° (наклон 14.7° к горизонту)
+                    // Наклон тангажа к посадочной барже B (X = 25 270 м) с компенсацией эффекта Кориолиса
+                    // Тангаж плавно снижается от 90.0° до 75.1° (наклон 14.9° к горизонту)
                     double turnProgress = Math.Pow(Math.Max(0.0, s.PosY - 300.0) / 69700.0, 1.25);
-                    double targetPitchDeg = 90.0 - 14.7 * Math.Min(1.0, turnProgress);
+                    double targetPitchDeg = 90.0 - 14.9 * Math.Min(1.0, turnProgress);
 
                     cmd.PitchAngle = (targetPitchDeg * Math.PI) / 180.0;
                     cmd.PhaseName = "ГРАВИТАЦИОННЫЙ РАЗВОРОТ";
@@ -106,7 +106,7 @@ namespace DSTU.VTVL.Guidance
 
                 case FlightStage.Coast_To_Apogee:
                     cmd.Throttle = 0.0;
-                    cmd.PitchAngle = (75.3 * Math.PI) / 180.0;
+                    cmd.PitchAngle = (75.1 * Math.PI) / 180.0;
                     cmd.PhaseName = s.PosY >= RocketParameters.KarmanLine ? "ОТКРЫТЫЙ КОСМОС (>100 км)" : "ВЫХОД НА АПОГЕЙ C";
                     cmd.PhaseDescription = "Инерционный полёт к апогею C (вакуум, невесомость)";
 
@@ -124,8 +124,8 @@ namespace DSTU.VTVL.Guidance
                     
                     // Управление планированием в направлении баржи с помощью решетчатых рулей
                     double dx = RocketParameters.PadB_X - s.PosX;
-                    double desiredGlideVx = Math.Max(-25.0, Math.Min(25.0, dx * 0.04));
-                    double glideTilt = Math.Max(-0.06, Math.Min(0.06, (desiredGlideVx - s.VelX) * 0.02));
+                    double desiredGlideVx = Math.Max(-45.0, Math.Min(45.0, dx * 0.08));
+                    double glideTilt = Math.Max(-0.14, Math.Min(0.14, (desiredGlideVx - s.VelX) * 0.04));
                     cmd.PitchAngle = Math.PI / 2.0 + glideTilt; // Носом вверх, двигатели вниз
 
                     cmd.PhaseName = s.PosY >= RocketParameters.KarmanLine ? "АПОГЕЙ C: РАЗВОРОТ RCS" : "УПРАВЛЯЕМЫЙ СПУСК К БАРЖЕ B";

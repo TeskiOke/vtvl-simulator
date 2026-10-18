@@ -20,6 +20,12 @@ namespace DSTU.VTVL.PhysicsCore
         /// <summary>Высота границы космоса (линия Кармана, м)</summary>
         public const double KarmanLine = 100000.0;
 
+        /// <summary>Географическая широта стартового стола Pad A (градусы, полигон ДГТУ 45.0° с.ш.)</summary>
+        public const double LaunchLatitudeDeg = 45.0;
+
+        /// <summary>Географическая широта стартового стола Pad A (радианы)</summary>
+        public const double LaunchLatitudeRad = LaunchLatitudeDeg * Math.PI / 180.0;
+
         // -------------------------------------------------------------
         // Массовые и геометрические характеристики ступени (VTVL-30)
         // -------------------------------------------------------------
@@ -36,11 +42,17 @@ namespace DSTU.VTVL.PhysicsCore
         /// <summary>Внешний диаметр цилиндрической части корпуса (м)</summary>
         public const double Diameter = 1.80;
 
+        /// <summary>Эффективный радиус затупления носовой части для аэронагрева Саттона-Грейвса (м)</summary>
+        public const double NoseRadius = 0.90;
+
         /// <summary>Площадь поперечного сечения (мидель) КР-3 (м²)</summary>
         public const double CrossSectionArea = 2.55;
 
         /// <summary>Эффективная площадь торможения при спуске кормой вперед с решётчатыми рулями (м²)</summary>
         public const double BroadsideReentryArea = 16.0;
+
+        /// <summary>Площадь проекции фюзеляжа плашмя для режима Belly-Flop (м²)</summary>
+        public const double BellyArea = 39.6;
 
         /// <summary>Длина ступени (м)</summary>
         public const double Length = 22.0;
@@ -171,5 +183,53 @@ namespace DSTU.VTVL.PhysicsCore
 
         /// <summary>Максимально допустимая безопасная горизонтальная скорость сноса (м/с)</summary>
         public const double MaxSafeHorizontalVelocity = 0.50;
+
+        // -------------------------------------------------------------
+        // Спецификация полномасштабной орбитальной ступени VTVL-180t (КР-3, Октябрь 2026)
+        // -------------------------------------------------------------
+        public static class Orbital180t
+        {
+            /// <summary>Полная стартовая масса корабля m0 (кг)</summary>
+            public const double TotalMassInitial = 180000.0; // 180 тонн
+
+            /// <summary>Сухая масса конструкции m_dry (кг)</summary>
+            public const double DryMass = 25000.0; // 25 тонн
+
+            /// <summary>Начальная масса заправленного топлива (кг)</summary>
+            public const double PropellantMassInitial = 155000.0; // 155 тонн
+
+            /// <summary>Внешний диаметр фюзеляжа (м)</summary>
+            public const double Diameter = 4.50;
+
+            /// <summary>Эффективный радиус затупления носовой части (м)</summary>
+            public const double NoseRadius = 2.25;
+
+            /// <summary>Площадь проекции фюзеляжа плашмя для режима Belly-Flop (м²)</summary>
+            public const double BellyArea = 225.0;
+
+            /// <summary>Площадь поперечного сечения (м²)</summary>
+            public const double CrossSectionArea = 15.904;
+
+            /// <summary>Длина корабля (м)</summary>
+            public const double Length = 50.0;
+
+            /// <summary>Максимальная суммарная тяга кластера ДУ на старте (Н)</summary>
+            public const double ThrustMax = 2700000.0; // 2.7 МН (TWR0 = 1.53)
+
+            /// <summary>Удельный импульс маршевых ДУ в пустоте Isp (с)</summary>
+            public const double SpecificImpulseVacuum = 385.0;
+
+            /// <summary>Удельный импульс маршевых ДУ на уровне моря Isp (с)</summary>
+            public const double SpecificImpulseSeaLevel = 330.0;
+
+            /// <summary>Тормозной импульс схода с орбиты (м/с)</summary>
+            public const double DeltaV_Deorbit = 160.0;
+
+            /// <summary>Резерв топлива на терминальный маневр и посадку (кг)</summary>
+            public const double LandingReservePropellant = 4500.0;
+
+            /// <summary>Целевая высота опорной орбиты (м)</summary>
+            public const double TargetOrbitAltitude = 250000.0; // 250 км
+        }
     }
 }
